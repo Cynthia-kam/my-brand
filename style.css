@@ -1,0 +1,494 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(0, 0, 0, 0.84);
+    margin:0;
+    padding:0;
+}
+nav{
+    height: 80px;
+    width: 100%;
+    border-bottom:1px solid  rgba(37, 225, 237, 1) ;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.84);
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+     
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li {
+    display: inline-block;
+    line-height: 40px;
+    margin: 0 40px;
+}
+nav ul li a{
+   text-decoration: none;
+   color: white;
+   text-transform: uppercase;
+  
+}
+nav a:hover{
+    border-bottom: 3px solid rgba(255, 138, 0, 1);
+}
+.check-btn{
+    font-size: 30px;
+    float: right;
+    line-height: 40px;
+    margin: 20px 40px;
+    color: white;
+    display:none;
+}
+#check{
+    display: none;
+}
+.home ul li{
+    display: inline-block;
+    margin: 0 10px;
+}
+#btn-login{
+    background-color: rgba(255, 138, 0, 1);
+    height: 2.5em;
+    width: 4.5em;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+        }
+
+.home-about{
+    display: grid;
+   grid-template-columns: 50% 50%;
+   
+}
+.profile{
+    grid-area: 1 / 1 /span 2/span 1;
+    text-align: center;
+    padding-top: 200px;
+    
+}
+.home{
+    grid-area: 1/ 2 /span 1/span 1;
+    text-align: center;
+    color: white;
+    padding-top: 120px;
+    
+}
+.about{
+    grid-area: 2/ 2/span 1/span 1;
+    text-align: center;
+    color: white;
+    
+}
+.profile > img{
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+   
+}
+.home> h1{
+   font-family: cursive;
+   font-size: 45px
+}
+.about > hr{
+    width: 50%;
+}
+.about-text >p{
+    text-align: left;
+    padding: 0px 40px;
+    font-size: 28px;
+}
+hr{
+background-color: rgba(37, 225, 237, 1);
+height: 3px;
+
+}
+.sub-heading{
+    font-family: Arial Narrow;
+    font-size: 14px;
+}
+.circle{
+height: 15px;
+width: 15px;
+background-color: rgba(255, 138, 0, 1);
+border-radius: 50%;
+display:inline-block;
+}
+
+.work,.skills{
+    display: flex; 
+    
+    
+}
+.work >div,.skills>div{
+    color: white;
+    margin: 10px;
+    padding: 20px;
+    width: 50%;
+    font-size: 28px;
+}
+.work-description i{
+    color: rgba(37, 225, 237, 1);
+    float: right;
+    padding-right: 30px;
+}
+.sub-heading >li{
+    text-align: left;
+}
+.work-img >img{
+height: 100%;
+width:100%;
+padding-top: 40px;
+} 
+.titles{
+display: flex;
+text-align: center;
+padding: 0px 40px;
+font-size: 30px;
+font-weight: bold;
+color: white;
+}
+.titles>div{
+width: 30%;
+}
+.skills-image hr{
+    height: 10px;
+}
+.card1 .card2 .card3 .card4 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    background-color: black;
+    border: 2px solid white;
+    
+  }
+  
+  .title {
+    color: white;
+    font-size: 20px;
+    padding-left: 7px;
+  }
+  
+  button {
+  
+    outline: 0;
+    display: inline-block;
+    padding: 8px ;
+    color: white;
+    background-color: rgba(255, 138, 0, 1);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: rgba(255, 138, 0, 1);
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
+  .blogs{
+    display: flex;
+}
+
+.flex-cards{
+    display: flex;
+    column-gap: 20px;
+    padding: 0px 40px;
+}
+.flex-cards div{
+    border: 1px solid white;
+    background-color: black;
+}
+.contact{
+    display: flex;
+    
+}
+.contact div{
+
+width: 50%;
+padding-left: 80px;
+}
+.message-me div{
+    width: 100%;
+}
+.message-me h3{
+    color: white;
+    font-size: 30px;
+    font-family: cursive;
+}
+/* contact form */
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: rgba(0, 0, 0, 0.33);
+    padding: 12px 20px;
+    border: none;
+    color: white;
+    border: 2px solid rgba(37, 225, 237, 1);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: rgba(37, 225, 237, 1);
+  }
+  
+  .container {
+    border-radius: 5px;
+    padding: 20px;
+   
+  }
+ 
+
+
+@media  screen and (max-width:1005px) {
+    nav ul li {
+        font-size: 12px;
+    }
+    .check-btn{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:921px){
+    nav ul li{
+        margin: 0 20px;
+    }
+    .home ul li{
+        display: inline-block;
+        margin: 0 8px;
+    }
+    .home-about{
+        display: grid;
+       grid-template-columns: 50% 50%;
+       
+    }
+    .profile{
+        grid-area: 1 / 1 /span 1/span 1;
+        text-align: center;
+        padding-top: 150px;
+       
+    }
+    .home{
+        grid-area: 1/ 2 /span 1/span 1;
+        text-align: left;
+        color: white;
+        padding-top:200px;
+       
+     
+    }
+    .about{
+        grid-area: 2/ 1/span 1/span 2;
+        text-align: center;
+        color: white;
+       
+    }   
+    .profile img{
+      
+       max-width: 230px;
+       max-height: 230px;
+    }
+    .home ul{
+        padding-left: 2px;
+      }
+  
+}
+@media screen and (max-width:681px){
+    nav ul li{
+        margin: 0 10px;
+    }
+    #btn-login{
+        height: 1.5em;
+    width: 3.5em;
+    margin: 0px 5px;
+    }
+    .profile img{
+      
+        max-width: 200px;
+        max-height: 200px;
+     }
+     .home ul{
+       padding-left: 2px;
+     }
+     
+     .home ul li{
+        display: inline-block;
+        margin: 0 3px;
+        font-size: 10px;
+    }
+   
+    .profile{
+        grid-area: 1 / 1 /span 1/span 1;
+        text-align: center;
+        padding-top: 150px;
+       
+    }
+    .home-about{
+        display: grid;
+        grid-template-columns: 50% 50%;
+       
+    }
+   
+    .home{
+        grid-area: 1/ 2 /span 1/span 1;
+        text-align: left;
+        color: white;
+        padding-top:200px;
+        
+     
+    }
+    .about{
+        grid-area: 2/ 1/span 1/span 2;
+        text-align: center;
+        color: white;
+      
+    }    
+    .home h1{
+        font-size: 28px;
+      
+    }    
+    .titles{
+        display: flex;
+        text-align: center;
+       
+        font-size: 18px;
+        font-weight: bold;
+        } 
+        .about-text p, .skills p,.work-description p{
+            font-size: 20px;
+        }
+   .work-img img{
+    max-width: 400px;
+    max-height: 300px;
+   }
+   
+}
+@media screen and (max-width:479px){
+    nav ul li{
+        margin: 0 5px;
+    }
+    #btn-login{
+        height: 15px;
+    width: 1.5em;
+    margin: 0px 3px;
+    }
+    nav{
+        height:60px;
+        
+    }
+    .profile img{
+      
+        max-width: 180px;
+        max-height: 180px;
+     }
+     .home ul li{
+        display: block;
+        margin: 0 10px;
+    }
+   .home h1{
+    font-size: 20px;
+   }
+   .titles{
+    font-size: 18px;
+    order: -2;
+   }
+    .about-text p, .skills p{
+        font-size: 18px;
+    }    
+    .skills{
+        display: block;
+    }
+    .skills div{
+      width: 100%;  
+    }
+    .work{
+        display: block;
+    }
+    .work div{
+      width: 100%;  
+    }
+  
+}
+@media screen and (max-width:415px){
+    .check-btn{
+        display: block;
+    }
+   nav ul{
+        position: fixed;
+        width: 60%;
+        height:100vh;
+        background: rgb(8, 74, 78);
+        top: 40px;
+        left:-60%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+    }
+    nav a:hover{
+        border-bottom: 3px solid rgba(255, 138, 0, 1);
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    .profile img{
+      
+        max-width: 150px;
+        max-height: 150px;
+     }
+     .home>h1{
+        font-size: 20px;
+        
+       }
+       .home-about{
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+    }
+       .profile{
+        grid-area: 1 / 1 /span 1/span 1;
+        text-align: center;
+        padding-top: 100px;
+      
+    }
+   
+    .home{
+        grid-area: 1/ 2 /span 1/span 1;
+        text-align: left;
+        color: white;
+        padding-top: 100px;
+        
+    }
+    .about{
+        grid-area: 2/ 1/span 1/span 2;
+        text-align: center;
+        color: white;
+        
+    } 
+    .titles{
+        font-size: 15px;
+       }
+     
+     
+}

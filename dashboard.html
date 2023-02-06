@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+</html>
+
+<head>
+    <title>K's dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="home"> <a href="http://localhost:5500"><i class="fa fa-home" style="font-size:30px;color:white"></i><label>&nbspHome</label></a></div>
+           
+        </div>
+        
+        <div class="side">
+            <div class="dash-img"><img src="./dashprofile.png"><br><label>Admin 1</label></div>
+            <div class="side-menu">
+               <a href="http://localhost:5500/blogList.html"><i class="fas fa-blog"><label>&nbsp BLOGS</label></i></a>
+                <i class="far fa-comment-alt"><label>&nbsp MESSAGES</label></i>
+                <i class="far fa-comment-dots"><label>&nbsp COMMENTS</label></i>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="boxes">
+                <div class="box1">
+                    <div class="circle"><label>45</label></div>
+                    <label class="container-label">Messages</label>
+                </div>
+                <div class="box2">
+                    <div class="circle">`<label>23</label></div>
+                    <label class="container-label">blogs</label>
+                </div>
+                <div class="box3">
+                    <div class="circle"><label>67</label></div>
+                    <label class="container-label">Comments</label>
+                </div>
+            </div>
+            <label class="message">Messages</label>
+            <div class="main-body">
+                
+                <div class="main-content" id="mainMessage">
+                    <!-- <a href="http://localhost:5500/message.html"> -->
+                    <table>
+                        <tr>
+                            <th>Message</th>
+                            <th>Subject</th>
+                        </tr>
+                        <tr>
+                            <td>ingabireclec@gmail.com</td>
+                            <td>Greetings</td>
+                        </tr>
+                    </table>
+                </div>
+                 
+                <div class="main-content" id="mainMessage2">
+                    <table>
+                        <tr>
+                            <th>Message</th>
+                            <th>Subject</th>
+                        </tr>
+                        <tr>
+                            <td>ingabireclec@gmail.com</td>
+                            <td>Greetings</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="main-content" id="mainMessage3">
+                    <table>
+                        <tr>
+                            <th>Message</th>
+                            <th>Subject</th>
+                        </tr>
+                        <tr>
+                            <td>ingabireclec@gmail.com</td>
+                            <td>Greetings</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="main-content" id="message">
+                    <div><a href="http://localhost:5500/dashboard.html"><i class="fa fa-arrow-left"></i>&nbsp BACK</a></div>
+                    <div class="dash-img"><img src="./message.jpg"><br><label>ingabireclec@gmail.com</label>
+                    <p>Dear Admin 1
+    
+                        Thanks for putting in the effort and coming up wth this interesting use case…
+                        The explanation here is that the minimum size of an fr unit is auto. Grid then looks at the min-content size of the item. If the item has a size (you’ve given it a width) or has something in it with a size such as an image, the min-content size might be much bigger than the share of available space you think 1fr will give you. It’s easy to think of 1fr as being “one part of the space in the grid container” when it is really one part of the space left over</p>
+                    </div>
+                    
+            </div>
+            <div class="main-content" id="reply">
+                <input type="text" placeholder="reply...">
+                </div>
+               
+            </div>
+            
+    </div>
+
+    <script>
+      const divItem=document.getElementById('mainMessage');
+      const divItem2=document.getElementById('mainMessage2');
+      const divItem3=document.getElementById('mainMessage3');
+      const message=document.getElementById('message');
+      const reply=document.getElementById('reply');
+      divItem.addEventListener('click',(e) =>{
+divClick()
+      })
+      function divClick(){
+        divItem.style.display='none';
+        divItem2.style.display='none';
+        divItem3.style.display='none';
+        message.style.display='block';
+        reply.style.display='block';
+        //console.log('div is removed');
+      }
+    </script>
+</body>
