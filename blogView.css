@@ -29,15 +29,21 @@ body{
 .content{
     margin:0px 20px;
     font-family: cursive;
+    background-color: rgba(0, 0, 0, 0.24);
 }
 .content p,ul{
-    padding: 0px 70px;
+
+    padding: 0px 200px;
     font-size: 20px;
+    line-height: 1.6;
   
+}
+p{
+    border-bottom: 1px solid black;
 }
 ul{
     text-transform: uppercase;
-    
+    font-weight: bold;
     color: rgba(37, 225, 237, 1);
     
 }
@@ -47,10 +53,20 @@ li{
     font-family: bold;
 }
 .footer{
-    background-color: rgba(0, 0, 0, 0.84);;
+    background-color: rgba(0, 0, 0, 0.24);;
     border-top: 9px solid rgba(255, 138, 0, 1);
-    height: 150PX;
-    padding-left: 40px;
+    height: 100px;
+    margin: 40px;
+ 
+}
+input[type=text]{
+    background-color: rgba(0, 0, 0, 0.04);
+    height: 100%;
+    width: 100%;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-family: cursive;
 }
 .nav{
     
@@ -59,7 +75,9 @@ li{
     box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
     background-color: rgba(0, 0, 0, 0.84);
-    padding:30px
+    padding:30px;
+   
+    position: fixed;
 }
 h3{
     font-size: 30px;
@@ -71,3 +89,28 @@ h3{
     margin-left: 30px;
     
 }
+.like{
+    height: 40px;
+    background-color:  rgba(0, 0, 0, 0.84);
+    float: right;
+    margin: 0 80px;
+    border: 1px solid rgba(255, 138, 0, 1);
+    font-size: 20px;
+    color: white;
+    font-family: cursive;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.comment{
+    height: 40px;
+    background-color:  rgba(0, 0, 0, 0.84);
+    float: right;
+    margin: 10px 60px;
+    border: 1px solid rgba(255, 138, 0, 1);
+    font-size: 20px;
+    color: white;
+    font-family: cursive;
+    border-radius: 3px;
+    font-weight: bold;
+}
+    

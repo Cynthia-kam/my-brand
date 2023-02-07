@@ -94,7 +94,14 @@ nav a:hover{
 }
 .home> h1{
    font-family: cursive;
-   font-size: 45px
+   font-size: 50px;
+   font-weight: bold;
+  background:linear-gradient(
+    to right, white, #ffffff,
+     rgba(37, 225, 237, 1), white); 
+     -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      
 }
 .about > hr{
     width: 50%;
@@ -102,7 +109,9 @@ nav a:hover{
 .about-text >p{
     text-align: left;
     padding: 0px 40px;
-    font-size: 28px;
+    font-size: 24px;
+    font-family: 'arial narrow';
+   
 }
 hr{
 background-color: rgba(37, 225, 237, 1);
@@ -131,7 +140,8 @@ display:inline-block;
     margin: 10px;
     padding: 20px;
     width: 50%;
-    font-size: 28px;
+    font-size: 24px;
+    font-family: 'arial narrow';
 }
 .work-description i{
     color: rgba(37, 225, 237, 1);
@@ -201,7 +211,10 @@ width: 30%;
   .blogs{
     display: flex;
 }
-
+a i{
+    margin-left: 20px;
+    color: white;
+}
 .flex-cards{
     display: flex;
     column-gap: 20px;
