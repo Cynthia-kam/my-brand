@@ -20,20 +20,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 reply.style.display = 'block';
                 //console.log('div is removed');
             }
-            like.addEventListener('click', (e) => {
-                likeBlog()
-            })
-            
-            function likeBlog(){
-                if(like.style.backgroundColor!=='rgba(255, 138, 0, 1)'){
-                like.style.backgroundColor='rgba(255, 138, 0, 1)';
-            
-               // console.log("button clicked and background changed");}
-
-                // if(like.style.backgroundColor=='rgba(255, 138, 0, 1)'){
-                // like.style.backgroundColor='rgba(0, 0, 0, 0.84))'
-                // console.log("button clicked and background changed")}
-            }
-          
-        }
+           
         });
