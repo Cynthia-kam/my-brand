@@ -23,9 +23,19 @@
         <div class="side">
             <div class="dash-img"><img src="./dashprofile.png"><br><label>Admin 1</label></div>
             <div class="side-menu">
-                <a href="http://localhost:5500/blogList.html"><i class="fas fa-blog"><label>&nbsp BLOGS</label></i></a>
-                <i class="far fa-comment-alt"><label>&nbsp MESSAGES</label></i>
-                <i class="far fa-comment-dots"><label>&nbsp COMMENTS</label></i>
+                <ul>
+
+                    <li>
+                        <p><i class="fas fa-blog"></i><a
+                                href="http://localhost:5500/blogList.html"><span>&nbspBLOGS</span></a></p>
+                    </li>
+                    <li>
+                        <p><i class="far fa-comment-alt"></i><a href="#" id="active"><span>&nbspMESSAGE</span></a></p>
+                    </li>
+                    <li>
+                        <p><i class="far fa-comment-dots"></i><span>&nbspCOMMENTS</span></p>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -87,8 +97,9 @@
                     </table>
                 </div>
                 <div class="main-content" id="message">
-                    <div><a href="http://localhost:5500/dashboard.html"><i class="fa fa-arrow-left"></i>&nbsp BACK</a>
-                    </div>
+                    <nav><a href="http://localhost:5500/dashboard.html"><i class="fa fa-arrow-left"></i>&nbsp BACK</a>
+                       <a href="#reply"><i class="fa fa-reply" id="reply-icon"style="font-size:20px">&nbsp reply</i></a>
+                    </nav>
                     <div class="dash-img"><img src="./message.jpg"><br><label>ingabireclec@gmail.com</label>
                         <p>Dear Admin 1
 
@@ -103,14 +114,16 @@
 
                 </div>
                 <div class="main-content" id="reply">
-                    <input type="text" placeholder="reply...">
+                   <textarea placeholder="reply"></textarea>
+                   <button class="send">SEND</button>
                 </div>
+                
 
             </div>
 
         </div>
-<script>
+        <script>
 
-</script>
-       
+        </script>
+
 </body>

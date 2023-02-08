@@ -2,6 +2,9 @@
     
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: rgba(0, 0, 0, 0.84);
     margin:0;
@@ -13,24 +16,30 @@ body{
     grid-template-columns: 20% 80%;
    
 }
-.container div{
-
-   
-}
 .menu{
     grid-area: 1 /1/ span 1/span 2;
     /* border-bottom: 1px solid white; */
     height: 70px;
     box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+   position: fixed;
+   width: 100%;
+  border-bottom:1px dashed black;
+   /* background-color: rgba(0, 0, 0, 0.24) ; */
+   background-color: rgba(0, 0, 0, 0.84);
 }
 .side{
 grid-area: 2/ 1/ span 1/span 1;
 border-right: 2px solid rgba(37, 225, 237, 1) ;
 background-color: rgba(0, 0, 0, 0.44);
+position: fixed;
+height: 100%;
+top:70px;
 
 }
 .main{
-    grid-area: 2 /2 /span 1/span 1;   
+    grid-area: 2 /2 /span 1/span 1; 
+    margin-top: 80px; 
+    overflow-y: none;
 }
 .boxes{
     display: flex;
@@ -44,12 +53,16 @@ background-color: rgba(0, 0, 0, 0.44);
 }
 .box1{
     background-color: rgba(216, 93, 189, 1);
+    text-align: center;
 }
 .box2{
     background-color: rgba(255, 138, 0, 1);
+    text-align: center;
 }
 .box3{
-    background-color:rgba(208, 209, 208, 0.66)
+    background-color:rgba(208, 209, 208, 0.66);
+    visibility: hidden;
+    
 }
 .circle{
     background-color: white;
@@ -71,7 +84,7 @@ background-color: rgba(0, 0, 0, 0.44);
     color: black;
     font-size: 20px;
     font-family: cursive;
-    margin-left: 40px;
+    margin-left: 10px;
     font-weight: bold;
 
 }
@@ -122,17 +135,17 @@ img{
 .side-menu{
     display: flex;
     flex-direction: column;
-    column-gap: 10px;
+    row-gap: 20px;
     color: white;
-    font-family: cursive;
     font-size: 20px;
     margin: 10px 40px;
 }
 .side-menu i{
     margin-bottom: 40px; 
+    
 }
 .side-menu i label{
-    font-family: cursive;
+  font-family:'Arial Narrow';
 }
 .menu label{
     color: white;
@@ -148,17 +161,62 @@ a{
 .main-content{
     display: block;
 }
-#message, #reply{
-    display: none;
-    height: 500px;
+.main-content nav{
+    height: 45px;
+    border-bottom: 1px dashed rgba(37, 225, 237, 1);
 }
-input[type=text]{
+.main-content nav a{
+   font-size: 14px;
+   padding-left: 30px;
+   line-height: 3;
+}
+#message{
+    display: none;
+    height: 400px;
+}
+#reply{
+    display: none;
+    height: 300px;
+}
+textarea{
     width: 100%;
-    padding: 12px;
-    border: 1px solid rgba(37, 225, 237, 1);
+    padding: 20px;
+    border: 2px solid rgba(255, 138, 0, 1);
+    font-family: cursive;
+    height: 100%;
     border-radius: 4px;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.84);
     resize: vertical;
     color: white;
 }
+.side-menu li{
+list-style-type: none;
+ margin-right: 40px;
+}
+.side-menu ul{
+padding-left: 0px;
+}
+a :hover{
+    border-bottom: 2px solid rgba(37, 225, 237, 1);
+    color: rgba(37, 225, 237, 1);
+}
+#reply-icon{
+   float: right; 
+   padding:10px 20px;
+}
+#reply-icon:hover{
+ background-color:rgba(37, 225, 237, 1); 
+ color:black
+ }
+ .send{
+    height: 40px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    margin-bottom: 70px;
+    border: 2px solid rgba(255, 138, 0, 1);
+ }
+ .send:hover{
+background-color: rgba(255, 138, 0, 1);
+ }

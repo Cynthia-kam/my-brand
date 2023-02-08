@@ -9,17 +9,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
             const reply = document.getElementById('reply');
             const like= document.getElementById('like');
             
-            // divItem.addEventListener('click', (e) => {
-            //     divClick()
-            // })
-            // function divClick() {
-            //     divItem.style.display = 'none';
-            //     divItem2.style.display = 'none';
-            //     divItem3.style.display = 'none';
-            //     message.style.display = 'block';
-            //     reply.style.display = 'block';
-            //     //console.log('div is removed');
-            // }
+            divItem.addEventListener('click', (e) => {
+                divClick()
+            })
+            function divClick() {
+                divItem.style.display = 'none';
+                divItem2.style.display = 'none';
+                divItem3.style.display = 'none';
+                message.style.display = 'block';
+                reply.style.display = 'block';
+                //console.log('div is removed');
+            }
             like.addEventListener('click', (e) => {
                 likeBlog()
             })

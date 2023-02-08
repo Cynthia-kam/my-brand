@@ -168,7 +168,36 @@ color: white;
 width: 30%;
 }
 .skills-image hr{
-    height: 10px;
+    height:10px;
+}
+progress{
+    width: 80%;
+    
+}
+progress {
+    -webkit-appearance: none;
+ }
+ progress[value]::-webkit-progress-value {
+    background-image:
+         -webkit-linear-gradient(-45deg, 
+                                 transparent 33%, rgba(0, 0, 0, .1) 33%, 
+                                 rgba(0,0, 0, .1) 66%, transparent 66%),
+         -webkit-linear-gradient(top, 
+                                 rgba(37, 225, 237, 1), 
+                                 rgba(0, 0, 0, .25)),
+         -webkit-linear-gradient(left, #09c, rgba(255, 138, 0, 1));
+  
+      border-radius: 2px; 
+      background-size: 35px 20px, 100% 100%, 100% 100%;
+  }
+.skills-image img{
+    height: 40px;
+    width:40px;
+}
+.skills-image div{
+    display: flex;
+    column-gap: 20px;
+    
 }
 .card1 .card2 .card3 .card4 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

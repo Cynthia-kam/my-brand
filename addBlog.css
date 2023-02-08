@@ -54,6 +54,9 @@ float: right;
     height: 300px;
     padding: 0px;
     width: 90%;
+    margin-left: 40px;
+    background-color: rgba(0, 0, 0, 0.84);
+    border: 2px solid rgba(37, 225, 237, 1);
 }
 h2{
 padding-left: 500px;
@@ -94,4 +97,10 @@ h3{
     padding: 40px;
     line-height: 40px;
     margin: 0 40px;
+}
+textarea{
+    color: white;
+    font-size: 18px;
+    font-family: cursive;
+    padding:30px;
 }
