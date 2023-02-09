@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+    <title>K's new blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="addBlog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="nav">
+        <div><a href="http://localhost:5500/blogList.html"><i class="fa fa-arrow-left"></i>&nbsp BACK</a></div>
+    </div>
+    <h2>+ Add a blog</h2>
+<form action="/c">    
+<div class="container">
+    <div class="input-control">
+    <div class="title"><input type="text" id="title" name="firstname" placeholder="Blog title..."></div>
+    <div class="error"></div></div>
+    <div class="input-control">
+    <div class="image"><input type="file" id="image"></div><div class="card-image" id="card-image">image</div>
+    <div class="error"></div></div>
+    <div class="input-control">
+    <div class="body"><textarea id="blogtext" placeholder="body..."></textarea></div>
+    <div class="error"></div></div>
+</div>
+<a href="http://localhost:5500/BlogPreview.html"><button class="btn-preview" type="submit">PREVIEW</button></a>
+</form>
+<script src="addBlog.js"></script>
+</body>

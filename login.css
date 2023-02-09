@@ -80,3 +80,26 @@ a{
   color: white;
   text-decoration: none;
 }
+.input-control.error input{
+  border-color: #ff3860;
+ 
+}
+.input-control.success input{
+  border-color: #09c372;
+}
+.input-control.error{
+  color: #ff3860;
+  font-size: 12px;
+  
+}
+
+.input-control input:focus{
+  outline: 0;
+}
+.input-control label{
+  float: left;
+ 
+}
+#error{
+  text-align: center;
+}

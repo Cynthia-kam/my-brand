@@ -6,7 +6,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="script.js"></script>
+
 
 </head>
 
@@ -92,13 +92,14 @@
         <div class="skills-image">
             <h3>Front-end</h3>
             <progress id="backend" value="32" max="100"></progress>
-    
+
             <h3>Back-end</h3>
             <progress id="backend" value="78" max="100"> </progress><br><br>
             <div>
                 <img src="./laravel.png">
                 <img src="./javaandroid.png">
-                <img src="./python.png"></div>
+                <img src="./python.png">
+            </div>
         </div>
     </div>
 
@@ -152,7 +153,7 @@
                     in maintainance mode</p>
                 <a href="#"><i class="fa fa-thumbs-up">likes</i></a>
                 <a href="#"><i class="fa fa-eye">views</i></a>
-                
+
                 <p><button>Read more</button></p>
             </div>
             <div class="card2">
@@ -163,7 +164,7 @@
                 <p>with the help of ml</p>
                 <a href="#"><i class="fa fa-thumbs-up">likes</i></a>
                 <a href="#"><i class="fa fa-eye">views</i></a>
-               
+
                 <p><button>Read more</button></p>
             </div>
 
@@ -173,7 +174,7 @@
                 <p class="title">Deep learning and its applications</p>
                 <a href="#"><i class="fa fa-thumbs-up"><label id="numLikes">67</label> Likes</i></a>
                 <a href="#"><i class="fa fa-eye">views</i></a>
-               
+
                 <p><a href="http://localhost:5500/blogView.html"><button>Read more</button></p>
             </div>
             <div class="card4">
@@ -183,7 +184,7 @@
                     in maintainance mode</p>
                 <a href="#"><i class="fa fa-thumbs-up">likes</i></a>
                 <a href="#"><i class="fa fa-eye">views</i></a>
-                
+
                 <p><button>Read more</button></p>
             </div>
         </div>
@@ -191,21 +192,27 @@
     <div class="contact" id="contact">
         <div class="message-me">
             <h3>Message me</h3>
+            <form action="" id="contact-form">
+               
+                <div class="container">
+                   
+                    <div class="input-control">
+                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-control">
+                        <input type="text" id="email" placeholder="email">
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-control">
+                        <textarea id="message" name="message" placeholder="Write something.."
+                            style="height:200px"></textarea>
+                        <div class="error"></div>
+                    </div>
+                    <input type="submit" id="submit" value="Submit">
+                </div>
+            </form>
 
-            <div class="container">
-                <form action="/action_page.php">
-
-                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-
-                    <input type="text" id="lname" name="lastname" placeholder="email">
-
-                    <textarea id="subject" name="subject" placeholder="Write something.."
-                        style="height:200px"></textarea>
-
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
         </div>
         <div class="info">
             <div class="titles">
@@ -220,5 +227,5 @@
         </div>
     </div>
 </body>
-
+<script src="index.js"></script>
 </html>
