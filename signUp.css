@@ -26,6 +26,9 @@ input[type=text], input[type=password] {
   color: white;
   font-size: 18px;
 }
+input[type=text], input[type=password]:focus{
+outline: 0;
+}
 label{
     color: white;
     margin-left: 60px;
@@ -60,6 +63,8 @@ span.psw {
 .login-form{
    width:60%;
    margin: auto;
+   margin-bottom: 100px;
+   
 }
 nav a{
     text-decoration: none;
@@ -81,14 +86,14 @@ a{
   text-decoration: none;
 }
 .input-control.error input{
-  border-color: #ff3860;
+  border-color: #f16d87;
  
 }
 .input-control.success input{
   border-color: #09c372;
 }
 .input-control.error{
-  color: #ff3860;
+  color: #f16d87;
   font-size: 12px;
   
 }
@@ -104,7 +109,7 @@ a{
   text-align: center;
 }
 #login-form h2{
-  color: white;
-  text-align: center;
- 
+    color: white;
+    text-align: center;
+   
 }

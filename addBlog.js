@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     });
     const setError =(element,message)=>{
-        inputControl=element.parentElement;
+        const inputControl=element.parentElement;
         const errorDisplay=inputControl.querySelector('.error');
         errorDisplay.innerText= message;
         inputControl.classList.add('error');
@@ -32,8 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let imageValue=image.value.trim();
         let blogValue=blogText.value.trim();
         var regex=/^[a-zA-Z]+$/;
+        var allowedExtensions =
+        /(\.jpg|\.jpeg|\.png|\.gif)$/i; 
+
         if(titleValue ===''){
-            setError(title,"blog has to have a title,please fill in a title")
+            setError(title,"please fill in a title")
         }
         else if(!titleValue.match(regex)){
             setError(title,"Title must only contain letters")
@@ -42,13 +45,35 @@ document.addEventListener('DOMContentLoaded', () => {
             setSuccess(title);
         }
         if(blogValue===''){
-            setError(blogText,"This field can't be emoty!")   
+            setError(blogText,"Add content for the blog,field can't be empty!")   
         }
         else{
             setSuccess(blogText);
         }
+        if(imageValue!==''){
+            if (!allowedExtensions.exec(imageValue)) {
+               setError(image,'Invalid file type, please choose an image(.jpg,.jpeg,.png,.gif)');
+                imageValue.innerHTML = '';
+                // return false;
+            }
+            else
+            {
+             
+                // Image preview
+                if (image.files && image.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById(
+                            'card-image').innerHTML =
+                            '<img src="' + e.target.result
+                            + '" style="height:150px;width:180px"/>';
+                    };
+                     
+                    reader.readAsDataURL(image.files[0]);
+                }
+            }
        
     }
-    });
+  }  });
     
     

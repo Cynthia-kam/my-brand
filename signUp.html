@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
 <head>
-  <title>K's login</title>
+  <title>K's signUp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="signUp.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
 </head>
@@ -16,25 +16,31 @@
   <div class="login-form">
 
     <form action="" id="login-form">
-      <h2>LOGIN</h2>
+       <h2>SIGN UP</h2>
       <div class="container">
         <div class="input-control">
-          <label for="uname"><b>Email</b></label>
-          <input type="text" placeholder="Your email" id="username" name="uname">
-          <div class="error" id="error"></div>
-        </div>
+            <label for="uname"><b>Email</b></label>
+            <input type="text" placeholder=" your email" id="username" name="uname">
+            <div class="error" id="error"></div>
+          </div>
+        
         <div class="input-control">
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="***************" id="password" name="psw">
           <div class="error" id="error"></div>
         </div>
-        <button type="submit"><a href="/dashboard.html">Login</a></button>
-        <!-- <label>
+        <div class="input-control">
+            <label for="psw"><b>Confirm Password</b></label>
+            <input type="password" placeholder="" id="password2" name="psw">
+            <div class="error" id="error"></div>
+          </div>
+        <button type="submit"><a href="/dashboard.html">Register</a></button>
+        <label>
           <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label> -->
+        </label>
       </div>
     </form>
   </div>
-  <script src="login.js"></script>
+  <script src="signUp.js"></script>
 </body>
 </html>

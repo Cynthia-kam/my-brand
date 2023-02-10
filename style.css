@@ -314,14 +314,14 @@ input[type=text], select, textarea {
   }
 
   .input-control.error input{
-    border-color: #ff3860;
+    border-color: #f16d87;
    
   }
   .input-control.success input{
     border-color: #09c372;
   }
   .input-control.error{
-    color: #ff3860;
+    color: #f16d87;
     font-size: 12px;
     
   }

@@ -78,6 +78,11 @@ font-size: 30px;
     margin-left: 500px;
     margin-bottom: 300px;
 }
+.btn-preview a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
 .nav{
     
     border-bottom: 5px solid rgba(255, 138, 0, 1);
@@ -105,15 +110,16 @@ textarea{
     padding:30px;
 }
 .input-control.error input{
-    border-color: #ff3860;
+    border-color: #f16d87;
    
   }
   .input-control.success input{
     border-color: #09c372;
   }
   .input-control.error{
-    color: #ff3860;
-    font-size: 12px;
+    color: #f16d87;
+    font-size: 20px;
+    font-weight: bold;
     
   }
   
@@ -126,4 +132,8 @@ textarea{
   }
   #error{
     text-align: center;
+  }
+  #errorimage{
+    margin-left: 40px;
+    font-size: 15px;
   }
