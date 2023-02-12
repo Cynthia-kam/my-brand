@@ -10,8 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', e=> {
     e.preventDefault();
     validateInputs();
+    adduser();
     
     });
+    // submit.addEventListener('click',e=>{
+    // e.preventDefault();
+    // adduser();
+    // })
+
     const setError =(element,message)=>{
         inputControl=element.parentElement;
         const errorDisplay=inputControl.querySelector('.error');
@@ -44,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         else{
             setSuccess(username);
+           
         }
         if(passwordValue===''){
             setError(password,"password can't be empty")   
@@ -66,6 +73,43 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
         } 
     }
+    const adduser=()=>{
+        var usernameValue=username.value.trim();
+        var passwordValue=password.value.trim();
+        var queries=JSON.parse(localStorage.getItem("user"))
+        console.log(queries)
+       const user ={
+       email:usernameValue,
+       password:passwordValue
+       };
+       queries.push(user);
+       var Json= JSON.stringify(queries);
+       localStorage.setItem("queries",Json);
+       location.reload();
+       console.log("user added");
+    }
+    const togglePassword = document.querySelector('#togglePassword');
+
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('bi-eye');
+    
+});
+const togglePassword2 = document.querySelector('#togglePassword2');
+
+
+  togglePassword2.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+    password2.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('bi-eye');
+    
+});
     });
     
     

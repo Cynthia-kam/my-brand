@@ -33,6 +33,7 @@ const isValidEmail = email => {
 const validateInputs=()=>{
     let usernameValue=username.value.trim();
     let passwordValue=password.value.trim();
+    
     if(usernameValue ===''){
         setError(username,"username is required")
     }
@@ -40,15 +41,26 @@ const validateInputs=()=>{
         setError(username,"provide a valid email address")
     }
     else{
-        setSuccess(username);
+      setSuccess(username);
     }
     if(passwordValue===''){
         setError(password,"password is required")   
     }
     else{
-        setSuccess(password);
+      setSuccess(password);
     }
-   
+
 }
+const togglePassword = document.querySelector('#togglePassword');
+
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('bi-eye');
+    
+});
 });
 
