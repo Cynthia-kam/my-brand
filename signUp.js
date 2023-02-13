@@ -76,26 +76,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const adduser=()=>{
         var usernameValue=username.value.trim();
         var passwordValue=password.value.trim();
-        var queries=JSON.parse(localStorage.getItem("user"))
-        console.log(queries)
-       const user ={
+        if(usernameValue===''||passwordValue===''||password2Value===''){
+            validateInputs();  
+        }else{
+        var content=localStorage.getItem('users');
+        let users;
+        if(content=== null){
+            users=[];
+        }else{
+            users=JSON.parse(content);
+            console.log(users)
+        }
+       let user ={
        email:usernameValue,
        password:passwordValue
        };
-       queries.push(user);
-       var Json= JSON.stringify(queries);
-       localStorage.setItem("queries",Json);
-       location.reload();
-       console.log("user added");
-    }
+    users.push(user);
+    localStorage.setItem("users",JSON.stringify(users));
+    console.log(users);
+    }}
+
     const togglePassword = document.querySelector('#togglePassword');
-
-
-  togglePassword.addEventListener('click', function (e) {
-    // toggle the type attribute
+    togglePassword.addEventListener('click', function (e) {
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
     password.setAttribute('type', type);
-    // toggle the eye slash icon
     this.classList.toggle('bi-eye');
     
 });
