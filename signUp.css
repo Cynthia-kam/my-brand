@@ -123,6 +123,14 @@ a{
   cursor: pointer;
   color:aquamarine;
 }
+#Noacc{
+  margin-left: 30rem;
+ 
+ }
+ #Noacc a{
+   /* color:rgba(37, 225, 237, 1); */
+   text-decoration: underline;
+ }
 @media  screen and (max-width:1005px) {
   button {
     background-color: rgba(255, 138, 0, 1);

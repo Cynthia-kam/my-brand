@@ -108,3 +108,11 @@ a{
   text-align: center;
  
 }
+#Noacc{
+ margin-left: 30rem;
+
+}
+#Noacc a{
+  color:rgba(37, 225, 237, 1);
+  text-decoration: underline;
+}

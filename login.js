@@ -9,6 +9,7 @@ const submit=document.getElementById('submit');
 form.addEventListener('submit', e=> {
 e.preventDefault();
 validateInputs();
+ loginFunction();
 
 });
 const setError =(element,message)=>{
@@ -17,13 +18,15 @@ const setError =(element,message)=>{
     errorDisplay.innerText= message;
     inputControl.classList.add('error');
     inputControl.classList.remove('success');
+    return true;
 }
 const setSuccess=element=>{
-    let Status=false
+    
     const inputControl= element.parentElement;
     const errorDisplay=inputControl.querySelector('.error');
     errorDisplay.innerText="";
     inputControl.classList.remove('error');
+    return true;
     // inputControl.classList.add('success');
 }
 const isValidEmail = email => {
@@ -33,7 +36,8 @@ const isValidEmail = email => {
 const validateInputs=()=>{
     let usernameValue=username.value.trim();
     let passwordValue=password.value.trim();
-    
+    let successUsername
+    let successPassword
     if(usernameValue ===''){
         setError(username,"username is required")
     }
@@ -41,19 +45,19 @@ const validateInputs=()=>{
         setError(username,"provide a valid email address")
     }
     else{
-      setSuccess(username);
+     successUsername= setSuccess(username);
     }
     if(passwordValue===''){
         setError(password,"password is required")   
     }
     else{
-      setSuccess(password);
+        successPassword=setSuccess(password);
     }
-
+// if(successUsername&&successPassword){
+//     loginFunction();
+// }
 }
 const togglePassword = document.querySelector('#togglePassword');
-
-
   togglePassword.addEventListener('click', function (e) {
     // toggle the type attribute
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -62,5 +66,37 @@ const togglePassword = document.querySelector('#togglePassword');
     this.classList.toggle('bi-eye');
     
 });
+function loginFunction(e){
+   
+    const users=localStorage.getItem('users');
+    
+    Arrusers=JSON.parse(users)
+    // console.log(typeof(Arrusers))
+    
+    usermail=username.value.trim()
+    userpass=password.value.trim()
+    // console.log(Arrusers[1].email)
+   
+    // if(Arrusers[i].email==usermail)
+    if(Arrusers[0].email===usermail&&Arrusers[0].password===userpass){
+     location.href="/dashboard.html"
+     }
+     else
+     setError(password,"incorrect password")  
+     if(Arrusers[1].email===usermail&&Arrusers[1].password===userpass){
+        location.href="/dashboard.html"
+        }
+     else
+     setError(password,"incorrect password")  
+     if(usermail!==Arrusers[0].email&&usermail!==Arrusers[1].email){
+        setError(password,"") 
+        setError(username,"user not found") 
+        }
+     else
+     setError(password,"incorrect password")  
+ 
+    
+}
+     
 });
 

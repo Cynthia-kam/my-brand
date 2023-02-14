@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const adduser=()=>{
         var usernameValue=username.value.trim();
         var passwordValue=password.value.trim();
-        if(usernameValue===''||passwordValue===''||password2Value===''){
+        if(usernameValue===''||passwordValue===''){
             validateInputs();  
         }else{
         var content=localStorage.getItem('users');
