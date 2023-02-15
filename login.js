@@ -90,7 +90,7 @@ function loginFunction(e){
      setError(password,"incorrect password")  
      if(usermail!==Arrusers[0].email&&usermail!==Arrusers[1].email){
         setError(password,"") 
-        setError(username,"user not found") 
+        setError(username,"user not found,try signing up") 
         }
      else
      setError(password,"incorrect password")  
