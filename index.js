@@ -6,11 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const mess=document.getElementById('message');
     
     
+    
     form.addEventListener('submit', e=> {
     e.preventDefault();
-    validateInputs();
-    
+     //validateInputs();
+    sendMessage();
     });
+
     const setError =(element,message)=>{
         inputControl=element.parentElement;
         const errorDisplay=inputControl.querySelector('.error');
@@ -30,9 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }
+        
     const validateInputs=()=>{
-        let emailValue=email.value.trim();
-        let messageValue=mess.value.trim();
+        const emailValue=email.value;
+        const messageValue=mess.value;
         if(emailValue ===''){
             setError(email,"email is required")
         }
@@ -49,6 +52,24 @@ document.addEventListener('DOMContentLoaded', () => {
             setSuccess(mess);
         }
        
+    }
+
+    const sendMessage=()=>{
+       
+        if(email.value===''||mess.value===''||!isValidEmail(email.value)){
+                    validateInputs();     
+                }
+                else{
+        messages = JSON.parse(localStorage.getItem('messages')) || [];
+            let user = {};
+            user.email = email.value
+            user.message=mess.value
+        messages.push(user);
+        const stringMessages = JSON.stringify(messages);
+        localStorage.setItem('messages', stringMessages);
+        
+           }
+     
     }
     });
     

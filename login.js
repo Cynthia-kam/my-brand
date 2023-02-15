@@ -78,6 +78,7 @@ function loginFunction(e){
     const targetUser= Arrusers.find(users=>users.email==usermail);
     if(targetUser&& targetUser.password==userpass){
         window.location="/dashboard.html"
+        localStorage.setItem('currentUser', JSON.stringify(targetUser))
     }
     else if(targetUser&& targetUser.password!=userpass){
         setError(password,"incorrect password")    
