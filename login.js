@@ -68,35 +68,24 @@ const togglePassword = document.querySelector('#togglePassword');
 });
 function loginFunction(e){
    
-    const users=localStorage.getItem('users');
+    const users=localStorage.getItem('users')||[];
     
     Arrusers=JSON.parse(users)
     // console.log(typeof(Arrusers))
     
     usermail=username.value.trim()
     userpass=password.value.trim()
-    // console.log(Arrusers[1].email)
-   
-    // if(Arrusers[i].email==usermail)
-    if(Arrusers[0].email===usermail&&Arrusers[0].password===userpass){
-     location.href="/dashboard.html"
-     }
-     else
-     setError(password,"incorrect password")  
-     if(Arrusers[1].email===usermail&&Arrusers[1].password===userpass){
-        location.href="/dashboard.html"
-        }
-     else
-     setError(password,"incorrect password")  
-     if(usermail!==Arrusers[0].email&&usermail!==Arrusers[1].email){
-        setError(password,"") 
+    const targetUser= Arrusers.find(users=>users.email==usermail);
+    if(targetUser&& targetUser.password==userpass){
+        window.location="/dashboard.html"
+    }
+    else if(targetUser&& targetUser.password!=userpass){
+        setError(password,"incorrect password")    
+    }
+    else{
         setError(username,"user not found,try signing up") 
-        }
-     else
-     setError(password,"incorrect password")  
- 
-    
-}
-     
+        password.value=''
+    }}
+
 });
 

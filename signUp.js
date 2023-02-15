@@ -2,9 +2,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     const username = document.getElementById('username');
-    const password = document.getElementById('password');
-    const password2 = document.getElementById('password2');
+    let password = document.getElementById('password');
+    let password2 = document.getElementById('password2');
     const submit=document.getElementById('submit');
+    const success=document.getElementById('success-signup');
     
     
     form.addEventListener('submit', e=> {
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             setSuccess(password);
         }
-        if(password2===''){
+        if(password2Value===''){
             setError(password2,"password field is required")
         }
         else{
@@ -73,28 +74,44 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
         } 
     }
+    
     const adduser=()=>{
+        let password2Value=password2.value.trim();
         var usernameValue=username.value.trim();
         var passwordValue=password.value.trim();
-        if(usernameValue===''||passwordValue===''){
-            validateInputs();  
-        }else{
-        var content=localStorage.getItem('users');
-        let users;
-        if(content=== null){
-            users=[];
-        }else{
-            users=JSON.parse(content);
-            console.log(users)
+        if(usernameValue===''||passwordValue===''||password2Value===''){
+                    validateInputs();     
+                }
+        else if(!isValidEmail(usernameValue)){
+            validateInputs();
         }
-       let user ={
-       email:usernameValue,
-       password:passwordValue
-       };
-    users.push(user);
-    localStorage.setItem("users",JSON.stringify(users));
-    console.log(users);
-    }}
+        else if(passwordValue!==password2Value){
+            validateInputs();
+        }
+                else{
+        users = JSON.parse(localStorage.getItem('users')) || [];
+       
+        let targetUser= users.find(users=>users.email==usernameValue);
+        if(targetUser){
+            // success.style.backgroundColor= 'red'
+           setError(username,"account already exist")
+            password.value=''
+            password2.value=''  
+        }else{
+            let user = {};
+            user.email = usernameValue
+            user.password = passwordValue
+            user.password2= password2.value
+        users.push(user);
+        const stringUsers = JSON.stringify(users);
+        localStorage.setItem('users', stringUsers);
+        success.style.display='block';
+        success.innerText="successfully created a new account!!"
+        console.log(users);
+        password.value=''
+        password2.value=''
+          }  }
+    }
 
     const togglePassword = document.querySelector('#togglePassword');
     togglePassword.addEventListener('click', function (e) {

@@ -11,8 +11,9 @@ form {
     border: 2px solid rgba(37, 225, 237, 1);
     border-bottom: 20px solid rgba(37, 225, 237, 1);
     border-radius: 60px 0px 0px 0px;
-    margin-top: 150px;
+    margin-top: 80px;
     background-color: rgba(0, 0, 0, 0.45);
+    padding-bottom: 18px;
 }
 
 input[type=text], input[type=password] {
@@ -30,6 +31,7 @@ input[type=text], input[type=password]:focus{
 outline: 0;
 }
 label{
+ 
     color: white;
     margin-left: 60px;
     font-size: 20px;
@@ -53,7 +55,7 @@ button:hover {
 }
 
 .container {
-  padding: 16px;
+  padding: 0;
 }
 
 span.psw {
@@ -63,7 +65,7 @@ span.psw {
 .login-form{
    width:60%;
    margin: auto;
-   margin-bottom: 100px;
+   margin-bottom: 10vw;
    
 }
 nav a{
@@ -124,12 +126,27 @@ a{
   color:aquamarine;
 }
 #Noacc{
-  margin-left: 30rem;
+  margin-left: 20vw;
+  padding-bottom: 8rem;
+  margin-bottom: 28px;
  
  }
  #Noacc a{
    /* color:rgba(37, 225, 237, 1); */
    text-decoration: underline;
+  
+ }
+ .success-signup{
+border: 1px solid rgb(131, 228, 136);
+background-color:rgb(168, 218, 197) ;
+width: 100%;
+padding: 1vw;
+height: 5vw;
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+display:none;
+
  }
 @media  screen and (max-width:1005px) {
   button {
@@ -146,6 +163,12 @@ a{
     height: 50px;
     
   }
+  .login-form{
+    width:80%;
+    margin: auto;
+    margin-bottom: 10vw;
+    
+ }
 }
 @media  screen and (max-width:921px) {
   button {
@@ -175,9 +198,12 @@ a{
     border: none;
     font-size: 15px;
     font-weight: bold;
-    height: 45px;
+    height: 45px; 
     
   }
+  .success-signup{
+    font-size: 15px;
+      }
 }
 @media  screen and (max-width:479px) {
   button {
@@ -232,4 +258,18 @@ a{
     margin-left: -25px;
    
   }
+  .login-form{
+    width:100%;
+    margin: auto;
+    margin-bottom: 10vw;
+    
+ }
+ form {
+  border: 2px solid rgba(37, 225, 237, 1);
+  border-bottom: 20px solid rgba(37, 225, 237, 1);
+  border-radius: 0px;
+  margin-top: 80px;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
 }
