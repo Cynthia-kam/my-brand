@@ -103,8 +103,9 @@ top:70px;
 }
 .main-body >div{
     background-color: black;
-    height:120px;
+    height:auto;
     margin: 20px;
+    padding-bottom: 20px;
     color: white;
     border-radius: 7px;
     width: 80%;
@@ -252,3 +253,6 @@ background-color: rgba(255, 138, 0, 1);
     font-weight: bold;
     
  }
+#message-btn{
+    display: block;
+}
