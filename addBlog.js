@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const image= document.getElementById('image');
     const blogText=document.getElementById('blogtext');
     const cardImage=document.getElementById('card-image');
-   
+    successAddedBlog=document.querySelector('#success-signup');
+   previewBlog=document.getElementById('previewBlog');
     
     form.addEventListener('submit', e=> {
     e.preventDefault();
@@ -80,55 +81,38 @@ document.addEventListener('DOMContentLoaded', () => {
   } 
   
  
-// Adding a blog to localstorage
+// saving a blog to localstorage
 const addBlog=()=>{
-    console.log(blogText.value);
-    console.log(title.value);
-
+    // console.log(blogText.value);
+    // console.log(title.value);
+localStorage.removeItem('blogs')
    var reader=new FileReader()
    var inputImage
    blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+ 
    let user = {};
+   var ourImage
    reader.addEventListener('load',function(){
+   ourImage=reader.result
+    user.title = title.value;
+    user.body=blogText.value;
     user.image= reader.result
+    blogs.push(user);
+    stringMessages = JSON.stringify(blogs);
+    
     })
     reader.readAsDataURL(image.files[0])
-        user.title = title.value;
-        user.body=blogText.value;
-    blogs.push(user);
-    const stringMessages = JSON.stringify(blogs);
+    // user.image= ourImage
+    // user.title = title.value;
+    // user.body=blogText.value;
+    // blogs.push(user);
+    // stringMessages = JSON.stringify(blogs);
     localStorage.setItem('blogs', stringMessages);
-    console.log(user.image)
-    
-    
-//     let titleValue=title.value.trim();
-//     let imageValue=image.value.trim();
-//     let blogValue=blogText.value.trim();
-//     var regex=/^[A-Za-z\s]*$/;
-//     const allowedExtensions =
-//     /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-       
-//     if(title.value===''||imageValue===''||blogValue===''){
-//                 validateInputs();     
-//             }
-//     else if(!allowedExtensions.exec(imageValue)||image.files && image.files[0]){
-//                 validateInputs();     
-//             }
-//     else{
-//     blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-//     //turning an imamge into a url
-   
-   
-//         let user = {};
-//         user.title = titleValue;
-//         // user.image=imageValue;
-//         user.body=blogValue;
-//     blogs.push(user);
-//     const stringMessages = JSON.stringify(blogs);
-//    // localStorage.setItem('blogs', stringMessages);
-//    // console.log(users)
-//        }}
+    successAddedBlog.style.display='block';
 }
+previewBlog.addEventListener('click',()=>{
+    window.location='/BlogPreview.html'
+})
 
 });
     

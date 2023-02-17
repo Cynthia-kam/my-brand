@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
+    
     const divItem = document.getElementById('blogcard');
     const deleteBlog=document.getElementById('deleteBlog');
+    addBlog=document.getElementById('btn-login');
 
+    Saveduser = JSON.parse(localStorage.getItem('currentUser')) || [];
+    if(Saveduser.role==='admin'){
+        addBlog.style.display='none';
+    }
     deleteBlog.addEventListener('click', (e) => {
         divDelete()
     })
@@ -12,4 +18,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
        
         //console.log('div is removed');
     }
+
+    
 });

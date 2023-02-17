@@ -137,3 +137,16 @@ textarea{
     margin-left: 40px;
     font-size: 15px;
   }
+  .success-signup{
+    border: 1px solid rgb(131, 228, 136);
+    background-color:rgb(168, 218, 197) ;
+    width: 100%;
+    padding: 1vw;
+    height: 5vw;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    display:none;
+    
+     }
