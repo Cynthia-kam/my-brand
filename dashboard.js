@@ -9,7 +9,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             const reply = document.getElementById('reply');
             const like= document.getElementById('like');
             const userprofile=document.getElementById('userprofile');
-            Totalusers=document.getElementById('Totalusers');
+            totalMessages=document.getElementById('totalMessages');
+            totalBlogs=document.getElementById('totalBlogs');
+            totalUsers=document.getElementById('totalUsers');
+            
           
             messageButton=document.getElementById('message-btn');
              main_body=document.getElementById('mainbody');
@@ -26,7 +29,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
             window.addEventListener('load', e=> {
                 userprofile.innerText=Saveduser.role;
-                Totalusers.innerText=JSON.parse(localStorage.messages).length;
+                totalUsers.innerText=JSON.parse(localStorage.users).length;
+                totalBlogs.innerText=JSON.parse(localStorage.blogs).length;
+                totalMessages.innerText=JSON.parse(localStorage.messages).length;
                 console.log(JSON.parse(localStorage.users).length)
               //  bodydiv.style.display='none'
                 });
@@ -64,5 +69,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
         main_body.appendChild(content)
                   }  ); })
 
-           
+ //bloglist contents
+ addBlog=document.getElementById('btn-login');
+ addBlog.addEventListener('click', e=> {
+   
+
+ if (document.getElementById('flex-cards').hasChildNodes()) return document.getElementById('flex-cards').innerHTML = "";
+ SavedBlog = JSON.parse(localStorage.getItem('blogs'));
+ if(!SavedBlog){
+    let content=document.createElement('p')
+    content.innerText='No blogs found'
+    document.getElementById('flex-cards').appendChild(content)}
+    else{
+ 
+ SavedBlog.forEach(element =>{
+     let content = document.createElement('div');
+    // content.classList.add('card1');
+      content.innerHTML=`
+      <img src="${(element.image)}" alt="blog" style="width:100%" id="blogImage">
+      <p class="title" id="blogTitle">${(element.title)}</p>
+      <a href="#"><i class="fa fa-dribbble"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <p><a href="blogEdit.html"><button class="update">update</button></a></p><p><button class="delete">delete</button></p>`
+
+      document.getElementById('flex-cards').appendChild(content)
+ }  );
+}
+})
+          
         });

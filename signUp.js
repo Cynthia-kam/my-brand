@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(users);
         password.value=''
         password2.value=''
+        console.log("users".users)
           }  }
     }
 

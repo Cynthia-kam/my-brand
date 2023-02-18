@@ -21,7 +21,7 @@
         </div>
 
         <div class="side">
-            <div class="dash-img"><img src="./dashprofile.png"><br><label id="userprofile">Admin 1</label></div>
+            <div class="dash-img"><img src="./dashprofile.png" class="profile"><br><label id="userprofile">Admin 1</label></div>
             <div class="side-menu">
                 <ul>
 
@@ -51,16 +51,16 @@
             </label>
             <div class="boxes">
                 <div class="box1">
-                    <div class="circle"><label id="Totalusers">0</label></div>
+                    <div class="circle"><label id="totalMessages">0</label></div>
                     <label class="container-label">Messages</label>
                 </div>
                 <div class="box2">
-                    <div class="circle">`<label>23</label></div>
+                    <div class="circle">`<label id="totalBlogs">23</label></div>
                     <label class="container-label">blogs</label>
                 </div>
                 <div class="box3">
-                    <div class="circle"><label>67</label></div>
-                    <label class="container-label">Comments</label>
+                    <div class="circle"><label id="totalUsers">67</label></div>
+                    <label class="container-label">Users</label>
                 </div>
             </div>
             <div class="main-body" id="mainbody">
@@ -88,10 +88,16 @@
                    <button class="send">SEND</button>
                 </div>
                 
-
+                <div>
+                    <button id="btn-login">Expand</button>
+                  
+                    <div class="flex-cards" id="flex-cards"hi></div>
+                </div>
             </div>
 
         </div>
+
+      
         
  <script src="dashboard.js"></script>
 </body>

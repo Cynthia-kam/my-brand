@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
         addBlog();
 
     });
+    previewBlog.addEventListener('click', () => {
+        window.location = '/BlogPreview.html'
+    })
     const setError = (element, message) => {
         const inputControl = element.parentElement;
         const errorDisplay = inputControl.querySelector('.error');
@@ -83,38 +86,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
    //Saving blog with 'blogs' key
     const addBlog = () => {
+       // localStorage.removeItem('blogs')
         var reader = new FileReader()
-        console.log(title.value)
-        blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+        blogs = JSON.parse(localStorage.getItem('blogs'))||[];
         let user = {};
-        var ourImage
         reader.addEventListener('load', function () {
-           // ourImage = reader.result
             user.title = title.value;
             user.body = blogText.value;
             user.image = reader.result
+            localStorage.removeItem('blogs')
             blogs.push(user);
             stringMessages = JSON.stringify(blogs);
             localStorage.setItem('blogs', stringMessages);
+            
 
         })
         reader.readAsDataURL(image.files[0])
-        // user.image= ourImage
-        // user.title = title.value;
-        // user.body=blogText.value;
-        // blogs.push(user);
-        // stringMessages = JSON.stringify(blogs)
-       console.log('blogs',blogs)
-       
         successAddedBlog.style.display = 'block';
+       
     }
 
 
 
 
-    previewBlog.addEventListener('click', () => {
-        window.location = '/BlogPreview.html'
-    })
+
 
 });
 
