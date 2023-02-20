@@ -94,7 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
             user.title = title.value;
             user.body = blogText.value;
             user.image = reader.result
-            localStorage.removeItem('blogs')
+            user.status="pending"
+           // localStorage.removeItem('blogs')
             blogs.push(user);
             stringMessages = JSON.stringify(blogs);
             localStorage.setItem('blogs', stringMessages);

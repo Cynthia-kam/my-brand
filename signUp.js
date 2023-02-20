@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let password2 = document.getElementById('password2');
     const submit=document.getElementById('submit');
     const success=document.getElementById('success-signup');
-    const role=document.querySelector('select')
+    
     
     form.addEventListener('submit', e=> {
     e.preventDefault();
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             user.email = usernameValue
             user.password = passwordValue
             user.password2= password2.value
-            user.role=role.value
+           
         users.push(user);
         const stringUsers = JSON.stringify(users);
         localStorage.setItem('users', stringUsers);

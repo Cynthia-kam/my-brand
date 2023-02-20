@@ -6,7 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const mess=document.getElementById('message');
     
     
-    
+window.addEventListener('load',()=>{
+        Savedblogs = JSON.parse(localStorage.getItem('blogs')) || [];
+        div=document.getElementById('blogsCardsDiv')
+       // if (div.hasChildNodes()) return div.innerHTML = "";
+                Savedblogs.forEach(element =>{
+                let content = document.createElement('div');
+               
+                 content.innerHTML=`
+                 
+                 <img src="${element.image}" alt="blog" style="width:100%">
+                 <p class="title">${(element.title)}</p>
+                 <a href="#"><i class="fa fa-thumbs-up">likes</i></a>
+                 <a href="#"><i class="fa fa-eye">views</i></a>
+ 
+                 <p><button>Read more</button></p>`
+                 
+        div.appendChild(content)
+                  }); 
+        
+                })
+
     form.addEventListener('submit', e=> {
     e.preventDefault();
      //validateInputs();

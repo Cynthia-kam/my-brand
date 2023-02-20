@@ -41,6 +41,7 @@ top:70px;
     grid-area: 2 /2 /span 1/span 1; 
     margin-top: 80px; 
     overflow-y: none;
+    
 }
 .boxes{
     display: flex;
@@ -252,7 +253,7 @@ background-color: rgba(255, 138, 0, 1);
  }
  .ham-menu {
     color: white;
-    margin-left:4px;
+    margin-left:4vw;
     font-size: 30px;
     font-family: 'arial narrow';
     font-weight: bold;
@@ -348,3 +349,33 @@ background-color: rgba(255, 138, 0, 1);
   .flex-cards{
     background-color: rgba(0, 0, 0, 0.44);
   }
+  @media  screen and (max-width:921px) {
+    .box1,.box2,.box3{
+        width: 18vw;
+        margin: 20px;
+        height: 150px;
+        border-radius: 4px;
+        box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+     }
+     .box1,.main-body,.ham-menu{
+        margin-left: 8vw;
+     }  
+}
+@media  screen and (max-width:681px) {
+  
+   .side{
+    display: none;
+   }
+   .container{
+    display:grid;
+    grid-template-columns: 0% 100%;
+   
+}
+.box1,.box2,.box3{
+    width: 30vw;
+    margin: 20px;
+    height: 150px;
+    border-radius: 4px;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+ }
+}

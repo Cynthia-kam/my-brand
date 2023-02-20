@@ -12,11 +12,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
             totalMessages=document.getElementById('totalMessages');
             totalBlogs=document.getElementById('totalBlogs');
             totalUsers=document.getElementById('totalUsers');
-            
-          
+            superAdminEmail='abijurucyn@gmail.com'
+            const boxUsers=document.getElementById('boxUsers');
             messageButton=document.getElementById('message-btn');
              main_body=document.getElementById('mainbody');
             logout=document.getElementById('logout');
+
+            document.getElementById('ham-menu').addEventListener('click',()=>{
+               if(document.getElementById('sidebar').style.display='none'){
+                document.getElementById('sidebar').style.backgroundColor='black'
+                document.getElementById('sidebar').style.border='none'
+                document.getElementById('sidebar').style.display='block'
+               }
+               main_body.addEventListener('click',()=>{
+                if(document.getElementById('sidebar').style.display='block'){
+                    document.getElementById('sidebar').style.display='none'
+                }
+               })
+            })
 
 
             logout.addEventListener('click',e=>{
@@ -24,11 +37,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 window.location="/login.html"
             })
             Saveduser = JSON.parse(localStorage.getItem('currentUser')) || [];
-            if(Saveduser.role==='admin'){
+            if(Saveduser.email!='abijurucyn@gmail.com'){
                 messageButton.style.display='none';
             }
             window.addEventListener('load', e=> {
-                userprofile.innerText=Saveduser.role;
+                if(Saveduser.email==='abijurucyn@gmail.com'){userprofile.innerText='superAdmin'}
+                else{userprofile.innerText='Admin'}
                 totalUsers.innerText=JSON.parse(localStorage.users).length;
                 totalBlogs.innerText=JSON.parse(localStorage.blogs).length;
                 totalMessages.innerText=JSON.parse(localStorage.messages).length;
@@ -36,17 +50,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
               //  bodydiv.style.display='none'
                 });
             
-            // divItem.addEventListener('click', (e) => {
-            //     divClick()
-            // })
-            // function divClick() {
-            //     divItem.style.display = 'none';
-            //     divItem2.style.display = 'none';
-            //     divItem3.style.display = 'none';
-            //     message.style.display = 'block';
-            //     reply.style.display = 'block';
-            //     //console.log('div is removed');
-            // }
+            boxUsers.addEventListener('click',()=>{
+                SavedUsers = JSON.parse(localStorage.getItem('users')) || []; 
+                if (main_body.hasChildNodes()) return main_body.innerHTML = "";
+                SavedUsers.forEach(element=>{
+                    let content = document.createElement('div');
+                    content.innerHTML=`
+                   
+                    <div class="main-content" id="mainMessage">
+                    
+                    <table>
+                        <tr>
+                            <th>email</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>${(element.email)}</td>
+                            <td><button>Delete</button>
+                        </tr>
+                    </table>
+                </div>`  
+                    main_body.appendChild(content) 
+                })
+            })
 
             messageButton.addEventListener('click',e=>{
                 Savedmessage = JSON.parse(localStorage.getItem('messages')) || [];
@@ -92,9 +118,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
       <a href="#"><i class="fa fa-twitter"></i></a>
       <a href="#"><i class="fa fa-linkedin"></i></a>
       <a href="#"><i class="fa fa-facebook"></i></a>
-      <p><a href="blogEdit.html"><button class="update">update</button></a></p><p><button class="delete">delete</button></p>`
+      <p id="Blogstatus">status: ${(element.status)}</p>
+      <p><button class="update" id="publish">Publish</button></p><p><button class="delete">delete</button></p>`
 
       document.getElementById('flex-cards').appendChild(content)
+      document.getElementById('publish').addEventListener('click',()=>{
+        //console.log("this blog is published")
+        blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+        let targetBlog= blogs.find(blogs=>blogs.title==document.getElementById('blogTitle').innerText);
+    
+        targetBlog.status="published"
+      console.log(targetBlog)
+      blogs.push(targetBlog)
+      document.getElementById('Blogstatus').innerHTML='status: '+targetBlog.status
+      })
+     
  }  );
 }
 })
