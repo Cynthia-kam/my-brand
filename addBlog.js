@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardImage = document.getElementById('card-image');
     successAddedBlog = document.querySelector('#success-signup');
     previewBlog = document.getElementById('previewBlog');
+   
 
     form.addEventListener('submit', e => {
         e.preventDefault();
@@ -89,12 +90,22 @@ document.addEventListener('DOMContentLoaded', () => {
        // localStorage.removeItem('blogs')
         var reader = new FileReader()
         blogs = JSON.parse(localStorage.getItem('blogs'))||[];
+        //generate random number
+        id = Math.floor((Math.random() * 100) + 1);
+        //check if the number is not in ls already
+        let blogId= blogs.find(blogs=>blogs.id==id);
+        while(blogId){
+            id = Math.floor((Math.random() * 100) + 1);
+        }
         let user = {};
         reader.addEventListener('load', function () {
+           
+            user.blogId=id
             user.title = title.value;
             user.body = blogText.value;
             user.image = reader.result
             user.status="pending"
+
            // localStorage.removeItem('blogs')
             blogs.push(user);
             stringMessages = JSON.stringify(blogs);
@@ -103,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         })
         reader.readAsDataURL(image.files[0])
+        console.log(id)
         successAddedBlog.style.display = 'block';
        
     }

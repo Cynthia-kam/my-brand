@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }
                })
             })
-
+           document.getElementById('ShowBlogButton').addEventListener('click',()=>{
+            main_body.style.display='block'
+           })
 
             logout.addEventListener('click',e=>{
                 localStorage.removeItem('currentUser');
@@ -98,19 +100,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
  //bloglist contents
  addBlog=document.getElementById('btn-login');
  addBlog.addEventListener('click', e=> {
-   
-
  if (document.getElementById('flex-cards').hasChildNodes()) return document.getElementById('flex-cards').innerHTML = "";
- SavedBlog = JSON.parse(localStorage.getItem('blogs'));
- if(!SavedBlog){
+ SavedBlog = JSON.parse(localStorage.getItem('blogs'))||[];
+ if(!SavedBlog||SavedBlog.length===0){
     let content=document.createElement('p')
     content.innerText='No blogs found'
     document.getElementById('flex-cards').appendChild(content)}
     else{
- 
+      
  SavedBlog.forEach(element =>{
      let content = document.createElement('div');
-    // content.classList.add('card1');
+      content.classList.add('card1');
       content.innerHTML=`
       <img src="${(element.image)}" alt="blog" style="width:100%" id="blogImage">
       <p class="title" id="blogTitle">${(element.title)}</p>
@@ -119,22 +119,65 @@ document.addEventListener("DOMContentLoaded", function(event) {
       <a href="#"><i class="fa fa-linkedin"></i></a>
       <a href="#"><i class="fa fa-facebook"></i></a>
       <p id="Blogstatus">status: ${(element.status)}</p>
-      <p><button class="update" id="publish">Publish</button></p><p><button class="delete">delete</button></p>`
+      <p><button class="update" id="publish">Publish</button></p><p><button class="delete" id="${element.blogId}">delete</button></p>`
 
       document.getElementById('flex-cards').appendChild(content)
-      document.getElementById('publish').addEventListener('click',()=>{
+      
+    document.getElementById('publish').addEventListener('click',()=>{
         //console.log("this blog is published")
         blogs = JSON.parse(localStorage.getItem('blogs')) || [];
         let targetBlog= blogs.find(blogs=>blogs.title==document.getElementById('blogTitle').innerText);
     
-        targetBlog.status="published"
+    targetBlog.status="published"
       console.log(targetBlog)
       blogs.push(targetBlog)
       document.getElementById('Blogstatus').innerHTML='status: '+targetBlog.status
-      })
+      //delete
      
- }  );
-}
+     
+
 })
+// var ButtonDelete=document.querySelectorAll('.delete')
+// var SavedBlog = localStorage.getItem('blogs');
+// for(let i=0;i<ButtonDelete.length;i++){
+//     ButtonDelete[i].addEventListener('click',()=>{
+//        var id=ButtonDelete[i].getAttribute("id")
+//         console.log(id);
+//         localStorage.setItem("ToDelete",id)
+       
+//         });
+//         blogs1=JSON.parse(SavedBlog)
+//         let blogCopy=[]
+//         blogs1.forEach(element => {
+//            if(element.id!=id){
+//             blogCopy.push(element)
+//            }
+//         localStorage.setItem("blogs",JSON.stringify(blogCopy))
+
+// })}
+     } )
+     var ButtonDelete=document.querySelectorAll('.delete')
+    
+     var SavedBlog = localStorage.getItem('blogs');
+     for(let i=0;i<ButtonDelete.length;i++){
+         ButtonDelete[i].addEventListener('click',()=>{
           
-        });
+             id=ButtonDelete[i].getAttribute("id")
+             localStorage.setItem("ToDelete",id)
+            
+             blogs1=JSON.parse(SavedBlog)
+             id=JSON.parse(localStorage.getItem('ToDelete'))
+             let blogCopy=[]
+             blogs1.forEach(element => {
+                if(element.blogId!=id){  
+                    
+                 blogCopy.push(element)
+                }
+             localStorage.setItem("blogs",JSON.stringify(blogCopy))});
+            }
+            
+     )}
+    }}
+     
+     )
+});
