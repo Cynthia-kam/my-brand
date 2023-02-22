@@ -109,60 +109,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
     else{
       
  SavedBlog.forEach(element =>{
+    var date=new Date();  
+      var day=date.getDate();  
+      var month=date.getMonth()+1;  
+       var year=date.getFullYear(); 
      let content = document.createElement('div');
       content.classList.add('card1');
       content.innerHTML=`
       <img src="${(element.image)}" alt="blog" style="width:100%" id="blogImage">
       <p class="title" id="blogTitle">${(element.title)}</p>
-      <a href="#"><i class="fa fa-dribbble"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <p id="Blogstatus">status: ${(element.status)}</p>
-      <p><button class="update" id="publish">Publish</button></p><p><button class="delete" id="${element.blogId}">delete</button></p>`
+      <p id="date">Date created:${day}/${month}/${year}</p>
+      <p><button class="update" id="${(element.blogId)}">Edit</button></p><p><button class="delete" id="${element.blogId}">delete</button></p>`
 
       document.getElementById('flex-cards').appendChild(content)
       
-    document.getElementById('publish').addEventListener('click',()=>{
-        //console.log("this blog is published")
-        blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-        let targetBlog= blogs.find(blogs=>blogs.title==document.getElementById('blogTitle').innerText);
-    
-    targetBlog.status="published"
-      console.log(targetBlog)
-      blogs.push(targetBlog)
-      document.getElementById('Blogstatus').innerHTML='status: '+targetBlog.status
+        
       //delete
-     
-     
-
-})
-// var ButtonDelete=document.querySelectorAll('.delete')
-// var SavedBlog = localStorage.getItem('blogs');
-// for(let i=0;i<ButtonDelete.length;i++){
-//     ButtonDelete[i].addEventListener('click',()=>{
-//        var id=ButtonDelete[i].getAttribute("id")
-//         console.log(id);
-//         localStorage.setItem("ToDelete",id)
-       
-//         });
-//         blogs1=JSON.parse(SavedBlog)
-//         let blogCopy=[]
-//         blogs1.forEach(element => {
-//            if(element.id!=id){
-//             blogCopy.push(element)
-//            }
-//         localStorage.setItem("blogs",JSON.stringify(blogCopy))
-
-// })}
-     } )
-     var ButtonDelete=document.querySelectorAll('.delete')
-    
+      var ButtonDelete=document.querySelectorAll('.delete')
+      var cardToDelete=document.querySelectorAll('.card1')
      var SavedBlog = localStorage.getItem('blogs');
      for(let i=0;i<ButtonDelete.length;i++){
          ButtonDelete[i].addEventListener('click',()=>{
           
              id=ButtonDelete[i].getAttribute("id")
+            
              localStorage.setItem("ToDelete",id)
             
              blogs1=JSON.parse(SavedBlog)
@@ -173,11 +143,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     
                  blogCopy.push(element)
                 }
-             localStorage.setItem("blogs",JSON.stringify(blogCopy))});
+               
+              cardToDelete[i].style.display='none'
+             localStorage.setItem("blogs",JSON.stringify(blogCopy))
+            
+            });
             }
             
      )}
-    }}
-     
-     )
-});
+     //update
+     var ButtonUpdate=  document.querySelectorAll('.update');
+     //save blog id in localstorage
+     for(let i=0;i<ButtonUpdate.length;i++){
+         ButtonUpdate[i].addEventListener('click',()=>{
+             var id=ButtonUpdate[i].getAttribute("id")
+             console.log(id);
+             localStorage.setItem("ToUpdate",id)
+             window.location="/BlogEdit.html"
+         })
+        }
+
+})
+
+
+     } 
+    
+    
+    })
+
+
+
+    })
