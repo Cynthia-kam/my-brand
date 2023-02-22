@@ -11,44 +11,19 @@
 </head>
 <body>
     <div class="nav">
-        <div><a href="blogList.html"><i class="fa fa-arrow-left"></i>&nbsp BACK</a></div>
+        <div><a href="/dashboard.html"><i class="fa fa-arrow-left"></i>&nbsp BACK</a></div>
     </div>
     <h2>+ Edit a blog</h2>
+    <form>
 <div class="container">
-    <div class="title"><input type="text" id="fname" name="firstname" value="Deep learning and its applications"></div>
-    <div class="image"><input type="file"></div><div class="card-image"><img src="./dl.PNG" style="height:
-    100%;width:100%"></div>
+    <div class="title"><input type="text" id="blog-title" name="firstname" value=""></div>
+    <div class="image"><input type="file" id="image"></div><div class="card-image"><img src="" style="height:
+    100%;width:100%" id="image-of-blog"></div>
     <div class="body"><textarea id="blogtext" >
-        All Eloquent methods that return more than one model result will return instances of the
-        Illuminate\Database\Eloquent\Collection class, including results retrieved via the get method or
-        accessed via a relationship. The Eloquent collection object extends Laravel's base collection, so it
-        naturally inherits dozens of methods used to fluently work with the underlying array of Eloquent models.
-        Be sure to review the Laravel collection documentation to learn all about these helpful methods!
-        All collections also serve as iterators, allowing you to loop over them as if they were simple PHP
-        arrays:
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam sed aut, adipisci repellendus eligendi
-        assumenda error molestias perferendis. Labore necessitatibus, error ducimus eos dicta culpa ad nulla
-        corrupti deleniti distinctio?
        
-        All Eloquent methods that return more than one model result will return instances of the
-        Illuminate\Database\Eloquent\Collection class, including results retrieved via the get method or
-        accessed via a relationship. The Eloquent collection object extends Laravel's base collection, so it
-        naturally inherits dozens of methods used to fluently work with the underlying array of Eloquent models.
-        Be sure to review the Laravel collection documentation to learn all about these helpful methods!
-        All collections also serve as iterators, allowing you to loop over them as if they were simple PHP
-        arrays:
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic possimus cum totam, et beatae excepturi.
-        Facilis aut laborum sunt? Labore sequi atque quam quis beatae laboriosam maiores reprehenderit culpa
-        vitae.
-        All Eloquent methods that return more than one model result will return instances of the
-        
-        Illuminate\Database\Eloquent\Collection class, including results retrieved via the get method or
-        accessed via a relationship. The Eloquent collection object extends Laravel's base collection, so it
-        naturally inherits dozens of methods used to fluently work with the underlying array of Eloquent models.
-        Be sure to review the Laravel collection documentation to learn all about these helpful methods!
-        All collections also serve as iterators, allowing you to loop over them as if they were simple PHP
-        arrays:
 </textarea></div>
 </div>
-<a href="/BlogPreview.html"><button class="btn-preview">PREVIEW</button>
+<button type="submit" class="btn-preview">UPDATE</button>
+</form> 
+    <script src="blogEdit.js"></script>
 </body>
