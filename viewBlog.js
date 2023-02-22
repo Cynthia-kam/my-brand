@@ -30,24 +30,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
         <label id="likesNumber">112</label>
     </div>`)
   
+//load comments
+const Arrcomments=JSON.parse(localStorage.getItem('comments')||[])
+var targetComments=[]
+ targetComments= Arrcomments.filter(comments=>comments.id=='40');
+console.log(targetComments)
+//display all comments with matching id
+div = document.getElementById('footer')
+targetComments.forEach(element => {
+    let content = document.createElement('div');
+     content.classList.add('Commentcard')
+    content.innerHTML = `
+   
+    <label id="nameOfCommenter">Name:${element.name}</label>
+    <label id="commentingMessage">Comment:${element.commentMessage}</label>
 
+    `
 
-
-
-
-// window.addEventListener('load',()=>{
-//     savedBlog = JSON.parse(localStorage.getItem('blogs'));
-//     var id=localStorage.getItem('ToReadMore')
-//     blogData.insertAdjacentHTML('afterbegin',
-//     `<div class="image"><img src="${savedBlog[id].image}"></div>
-//     <div class="content">
-//         <h3>${savedBlog[id].title}</h3>
-//         <p>${savedBlog[id].body}</p>
-//         <button class="like" id="like" onclick=""><i class="fa fa-thumbs-up"></i>Like</button>
-//         <label id="likesNumber">112</label>
-//     </div>`)
-
-// })
+    div.appendChild(content)
+});
 
 document.querySelector('.comment').addEventListener('click',()=>{
     let commenter=document.getElementById('nameOfCommenter')
@@ -61,26 +62,25 @@ document.querySelector('.comment').addEventListener('click',()=>{
     commentFromLS.push(comment)
     localStorage.setItem('comments',JSON.stringify(commentFromLS))
 
-    const comments=localStorage.getItem('comments')||[];
-    Arrcomments=JSON.parse(comments)
-
-    const targetComments= Arrcomments.find(comments=>comments.id==CurrentId);
-    
-    console.log(targetComments)
-    //display all comments with matching id
-    div = document.getElementById('footer')
-    targetComments.forEach(element => {
-        let content = document.createElement('div');
-
-        content.innerHTML = `
-       
-        <p id="nameOfCommenter">${element.name}</p>
-        <p id="commentingMessage">${element.commentMessage}</p>
    
-        `
+    // const Arrcomments=JSON.parse(localStorage.getItem('comments')||[])
+    // var targetComments=[]
+    //  targetComments= Arrcomments.filter(comments=>comments.id=='40');
+    // console.log(targetComments)
+    // //display all comments with matching id
+    // div = document.getElementById('footer')
+    // targetComments.forEach(element => {
+    //     let content = document.createElement('div');
+    //      content.classList.add('Commentcard')
+    //     content.innerHTML = `
+       
+    //     <label id="nameOfCommenter">Name:${element.name}</label>
+    //     <label id="commentingMessage">Comment:${element.commentMessage}</label>
+   
+    //     `
 
-        div.appendChild(content)
-    });
+    //     div.appendChild(content)
+    // });
 
 
 })
