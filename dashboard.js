@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       content.innerHTML=`
       <img src="${(element.image)}" alt="blog" style="width:100%" id="blogImage">
       <p class="title" id="blogTitle">${(element.title)}</p>
+<<<<<<< HEAD
       <p id="date">Date created:${day}/${month}/${year}</p>
       <p><button class="update" id="${(element.blogId)}">Edit</button></p><p><button class="delete" id="${element.blogId}">delete</button></p>`
 
@@ -127,6 +128,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
       //delete
       var ButtonDelete=document.querySelectorAll('.delete')
       var cardToDelete=document.querySelectorAll('.card1')
+=======
+      <a href="#"><i class="fa fa-dribbble"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <p id="Blogstatus">status: ${(element.status)}</p>
+      <p><button class="update" id="${element.blogId}">update</button></p><p><button class="delete" id="${element.blogId}">delete</button></p>`
+
+      document.getElementById('flex-cards').appendChild(content)
+
+    var ButtonUpdate=  document.querySelectorAll('.update');
+        //save blog id in localstorage
+        for(let i=0;i<ButtonUpdate.length;i++){
+            ButtonUpdate[i].addEventListener('click',()=>{
+                var id=ButtonUpdate[i].getAttribute("id")
+                console.log(id);
+                localStorage.setItem("ToUpdate",id)
+                window.location="/BlogEdit.html"
+            })
+        }
+       
+     
+
+
+
+     } )
+     var ButtonDelete=document.querySelectorAll('.delete')
+    
+>>>>>>> 60d6adf86f70a43dadc035d7dbecb86c1c1a8f75
      var SavedBlog = localStorage.getItem('blogs');
      for(let i=0;i<ButtonDelete.length;i++){
          ButtonDelete[i].addEventListener('click',()=>{
@@ -151,6 +181,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
             
      )}
+<<<<<<< HEAD
      //update
      var ButtonUpdate=  document.querySelectorAll('.update');
      //save blog id in localstorage
@@ -174,3 +205,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
     })
+=======
+    //put update button
+
+    }}
+     
+     )
+});
+>>>>>>> 60d6adf86f70a43dadc035d7dbecb86c1c1a8f75
