@@ -239,7 +239,7 @@ progress {
   }
   .blogs{
     display: flex;
-    border: 1px solid red;
+   
 }
 .blogs div{
     width: 100%;
