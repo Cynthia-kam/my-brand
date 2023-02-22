@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stringMessages = JSON.stringify(blogs);
             localStorage.setItem('blogs', stringMessages);
             
+            
 
         })
         reader.readAsDataURL(image.files[0])
