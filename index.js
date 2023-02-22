@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content.innerHTML = `
                  
                  <img src="${element.image}" alt="blog" style="width:100%">
-                 <p class="title">${(element.title)}</p>
+                 <p class="title" id="${(element.blogId)}">${(element.title)}</p>
                  <a href="#"><i class="fa fa-thumbs-up">likes</i></a>
                  <a href="#"><i class="fa fa-eye">views</i></a>
  
@@ -28,11 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         var ButtonReadMore=document.querySelectorAll('.readMore')
+        var ParagraphTitle=document.querySelectorAll('.title')
         for(let i=0;i<ButtonReadMore.length;i++){
             ButtonReadMore[i].addEventListener('click',()=>{
                 var id=ButtonReadMore[i].getAttribute("id")
+                var TocommentId=ParagraphTitle[i].getAttribute("id")
                 console.log(id);
                 localStorage.setItem("ToReadMore",id)
+                localStorage.setItem("ToComment",TocommentId)
                 window.location="/BlogView.html"
             })
         }
