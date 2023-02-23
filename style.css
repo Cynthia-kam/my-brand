@@ -340,15 +340,37 @@ input[type=text], select, textarea {
   #error{
     text-align: center;
   }
-
+  @media  screen and (max-width:10655px) {
+    nav ul li{
+        display: inline-block;
+        line-height: 40px;
+        margin: 0 20px;
+    } 
+  }
 
 
 @media  screen and (max-width:1005px) {
-    nav ul li {
-        font-size: 12px;
-    }
     .check-btn{
-        font-size: 14px;
+        display: block;
+    }
+   nav ul{
+        position: fixed;
+        width: 40%;
+        height:100%;
+        background: rgb(5, 31, 32);
+        top: 40px;
+        left:-60%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+    }
+    nav a:hover{
+        border-bottom: 3px solid rgba(255, 138, 0, 1);
+    }
+    #check:checked ~ ul{
+        left: 0;
     }
 }
 @media screen and (max-width:921px){
@@ -398,11 +420,7 @@ input[type=text], select, textarea {
     nav ul li{
         margin: 0 10px;
     }
-    #btn-login{
-        height: 1.5em;
-    width: 3.5em;
-    margin: 0px 5px;
-    }
+    
     .profile img{
       
         max-width: 200px;
@@ -467,11 +485,7 @@ input[type=text], select, textarea {
 @media screen and (max-width:479px){
     nav ul li{
         margin: 0 5px;
-    }
-    #btn-login{
-        height: 15px;
-    width: 1.5em;
-    margin: 0px 3px;
+        
     }
     nav{
         height:60px;
