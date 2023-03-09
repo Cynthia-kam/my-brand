@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         else {
             const data = { fullname:fullnameValue, email:usernameValue,password:passwordValue, isAdmin: false };
-            fetch('http://localhost:2000/signup', {
+            fetch('https://pink-thankful-oyster.cyclic.app/signup', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
