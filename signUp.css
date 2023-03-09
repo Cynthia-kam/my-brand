@@ -1,145 +1,145 @@
 *{
     
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 body{
-    background-color: rgba(0, 0, 0, 0.84);
-    margin:0;
-    padding:0;
+  background-color: rgba(0, 0, 0, 0.84);
+  margin:0;
+  padding:0;
 }
 form {
-    border: 2px solid rgba(37, 225, 237, 1);
-    border-bottom: 20px solid rgba(37, 225, 237, 1);
-    border-radius: 60px 0px 0px 0px;
-    margin-top: 80px;
-    background-color: rgba(0, 0, 0, 0.45);
-    padding-bottom: 18px;
+  border: 2px solid rgba(37, 225, 237, 1);
+  border-bottom: 20px solid rgba(37, 225, 237, 1);
+  border-radius: 60px 0px 0px 0px;
+  margin-top: 80px;
+  background-color: rgba(0, 0, 0, 0.45);
+  padding-bottom: 18px;
 }
 
 input[type=text], input[type=password] {
-  width: 80%;
-  padding: 12px 40px;
-  margin: 8px 50px;
-  display: inline-block;
-  border: 1px solid rgba(37, 225, 237, 1);
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.24);
-  color: white;
-  font-size: 18px;
+width: 80%;
+padding: 12px 40px;
+margin: 8px 50px;
+display: inline-block;
+border: 1px solid rgba(37, 225, 237, 1);
+box-sizing: border-box;
+background-color: rgba(0, 0, 0, 0.24);
+color: white;
+font-size: 18px;
 }
 input[type=text], input[type=password]:focus{
 outline: 0;
 }
 label{
- 
-    color: white;
-    margin-left: 60px;
-    font-size: 20px;
-    font-family: cursive;
+
+  color: white;
+  margin-left: 60px;
+  font-size: 20px;
+  font-family: cursive;
 }
 button {
-  background-color: rgba(255, 138, 0, 1);
-  color: black;
-  padding: 14px 20px;
-  margin: 8px 300px;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 20%;
-  border: none;
-  font-size: 20px;
-  font-weight: bold;
-  
+background-color: rgba(255, 138, 0, 1);
+color: black;
+padding: 14px 20px;
+margin: 8px 300px;
+border-radius: 4px;
+cursor: pointer;
+width: 20%;
+border: none;
+font-size: 20px;
+font-weight: bold;
+
 }
 button:hover {
-  opacity: 0.8;
+opacity: 0.8;
 }
 
 .container {
-  padding: 0;
+padding: 0;
 }
 
 span.psw {
-  float: right;
-  padding-top: 16px;
+float: right;
+padding-top: 16px;
 }
 .login-form{
-   width:60%;
-   margin: auto;
-   margin-bottom: 10vw;
-   
-}
-nav a{
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    padding: 40px;
-    line-height: 40px;
-    margin: 0 40px;
-}
-nav{
-    height: 60px;
-    border-bottom: 3px solid rgba(37, 225, 237, 1);
-}
-nav a:hover{
-   color:rgba(255, 138, 0, 1);
-}
-a{
-  color: white;
-  text-decoration: none;
-}
-.input-control.error input{
-  border-color: #f16d87;
+ width:60%;
+ margin: auto;
+ margin-bottom: 10vw;
  
 }
+nav a{
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 40px;
+  line-height: 40px;
+  margin: 0 40px;
+}
+nav{
+  height: 60px;
+  border-bottom: 3px solid rgba(37, 225, 237, 1);
+}
+nav a:hover{
+ color:rgba(255, 138, 0, 1);
+}
+a{
+color: white;
+text-decoration: none;
+}
+.input-control.error input{
+border-color: #f16d87;
+
+}
 .input-control.success input{
-  border-color: #09c372;
+border-color: #09c372;
 }
 .input-control.error{
-  color: #f16d87;
-  font-size: 12px;
-  
+color: #f16d87;
+font-size: 12px;
+
 }
 
 .input-control input:focus{
-  outline: 0;
+outline: 0;
 }
 .input-control label{
-  float: left;
- 
+float: left;
+
 }
 #error{
-  text-align: center;
+text-align: center;
 }
 #login-form h2{
-    color: white;
-    text-align: center;
-   
+  color: white;
+  text-align: center;
+ 
 }
 #togglePassword{
-  margin-left: -90px;
-  cursor: pointer;
-  color:aquamarine;
+margin-left: -90px;
+cursor: pointer;
+color:aquamarine;
 }
 #togglePassword2{
-  margin-left: -90px;
-  cursor: pointer;
-  color:aquamarine;
+margin-left: -90px;
+cursor: pointer;
+color:aquamarine;
 }
 #Noacc{
-  margin-left: 20vw;
-  padding-bottom: 8rem;
-  margin-bottom: 28px;
- 
- }
- #Noacc a{
-   /* color:rgba(37, 225, 237, 1); */
-   text-decoration: underline;
-  
- }
- #Noacc a:hover{
-  color: rgba(37, 225, 237, 1);
+margin-left: 20vw;
+padding-bottom: 8rem;
+margin-bottom: 28px;
+
 }
- .success-signup{
+#Noacc a{
+ /* color:rgba(37, 225, 237, 1); */
+ text-decoration: underline;
+
+}
+#Noacc a:hover{
+color: rgba(37, 225, 237, 1);
+}
+.success-signup{
 border: 1px solid rgb(131, 228, 136);
 background-color:rgb(168, 218, 197) ;
 width: 100%;
@@ -150,140 +150,140 @@ font-size: 20px;
 font-weight: bold;
 display:none;
 
- }
- #roles{
-  width: 80%;
+}
+#roles{
+width: 80%;
+padding: 12px 40px;
+margin: 8px 50px;
+display: inline-block;
+border: 1px solid rgba(37, 225, 237, 1);
+box-sizing: border-box;
+background-color: rgba(0, 0, 0, 0.24);
+color: white;
+font-size: 18px;
+}
+@media  screen and (max-width:1005px) {
+button {
+  background-color: rgba(255, 138, 0, 1);
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 220px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 20%;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  height: 50px;
+  
+}
+.login-form{
+  width:80%;
+  margin: auto;
+  margin-bottom: 10vw;
+  
+}
+}
+@media  screen and (max-width:921px) {
+button {
+  background-color: rgba(255, 138, 0, 1);
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 220px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 20%;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  height: 50px;
+  
+}
+}
+@media  screen and (max-width:681px) {
+button {
+  background-color: rgba(255, 138, 0, 1);
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 160px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 26%;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  height: 45px; 
+  
+}
+.success-signup{
+  font-size: 15px;
+    }
+}
+@media  screen and (max-width:479px) {
+button {
+  background-color: rgba(255, 138, 0, 1);
+  color: black;
+  padding: 10px 5px;
+  margin: 8px 120px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 30%;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  height: 40px;
+  
+}
+}
+@media  screen and (max-width:415px) {
+button {
+  background-color: rgba(255, 138, 0, 1);
+  color: black;
+  padding: 10px 5px;
+  margin: 8px 80px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 40%;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  height: 34px;
+  
+}
+input[type=text], input[type=password] {
+  width: 90%;
   padding: 12px 40px;
-  margin: 8px 50px;
+  margin: 8px 0px;
   display: inline-block;
   border: 1px solid rgba(37, 225, 237, 1);
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.24);
   color: white;
   font-size: 18px;
- }
-@media  screen and (max-width:1005px) {
-  button {
-    background-color: rgba(255, 138, 0, 1);
-    color: black;
-    padding: 14px 20px;
-    margin: 8px 220px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 20%;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    height: 50px;
-    
-  }
-  .login-form{
-    width:80%;
-    margin: auto;
-    margin-bottom: 10vw;
-    
- }
+  
 }
-@media  screen and (max-width:921px) {
-  button {
-    background-color: rgba(255, 138, 0, 1);
-    color: black;
-    padding: 14px 20px;
-    margin: 8px 220px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 20%;
-    border: none;
-    font-size: 15px;
-    font-weight: bold;
-    height: 50px;
-    
-  }
+.input-control label{
+  float: left;
+  font-size: 14px;
+  margin-left: 0;
+ 
 }
-@media  screen and (max-width:681px) {
-  button {
-    background-color: rgba(255, 138, 0, 1);
-    color: black;
-    padding: 14px 20px;
-    margin: 8px 160px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 26%;
-    border: none;
-    font-size: 15px;
-    font-weight: bold;
-    height: 45px; 
-    
-  }
-  .success-signup{
-    font-size: 15px;
-      }
-}
-@media  screen and (max-width:479px) {
-  button {
-    background-color: rgba(255, 138, 0, 1);
-    color: black;
-    padding: 10px 5px;
-    margin: 8px 120px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 30%;
-    border: none;
-    font-size: 15px;
-    font-weight: bold;
-    height: 40px;
-    
-  }
-}
-@media  screen and (max-width:415px) {
-  button {
-    background-color: rgba(255, 138, 0, 1);
-    color: black;
-    padding: 10px 5px;
-    margin: 8px 80px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 40%;
-    border: none;
-    font-size: 15px;
-    font-weight: bold;
-    height: 34px;
-    
-  }
-  input[type=text], input[type=password] {
-    width: 90%;
-    padding: 12px 40px;
-    margin: 8px 0px;
-    display: inline-block;
-    border: 1px solid rgba(37, 225, 237, 1);
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.24);
-    color: white;
-    font-size: 18px;
-    
-  }
-  .input-control label{
-    float: left;
-    font-size: 14px;
-    margin-left: 0;
-   
-  }
 #togglePassword,#togglePassword2{
-    margin-left: -25px;
-   
-  }
-  .login-form{
-    width:100%;
-    margin: auto;
-    margin-bottom: 10vw;
-    
- }
- form {
-  border: 2px solid rgba(37, 225, 237, 1);
-  border-bottom: 20px solid rgba(37, 225, 237, 1);
-  border-radius: 0px;
-  margin-top: 80px;
-  background-color: rgba(0, 0, 0, 0.45);
+  margin-left: -25px;
+ 
+}
+.login-form{
+  width:100%;
+  margin: auto;
+  margin-bottom: 10vw;
+  
+}
+form {
+border: 2px solid rgba(37, 225, 237, 1);
+border-bottom: 20px solid rgba(37, 225, 237, 1);
+border-radius: 0px;
+margin-top: 80px;
+background-color: rgba(0, 0, 0, 0.45);
 }
 
 }
