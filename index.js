@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(blogs)
                 blogs.data.forEach((element, index) => {
                     let content = document.createElement('div');
-    
+                    content.classList.add('card1');
                     content.innerHTML = `
                          <img src="${element.image}" alt="blog" style="width:100%">
                          <p class="title" id="$">${(element.title)}</p>
