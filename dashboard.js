@@ -35,22 +35,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
     })
 
     logout.addEventListener('click', e => {
-        localStorage.removeItem('currentUser');
+        localStorage.removeItem('token');
         window.location = "/login.html"
+        alert("logged out sucessfully")
     })
     Saveduser = JSON.parse(localStorage.getItem('currentUser')) || [];
-    
+
     window.addEventListener('load', e => {
         fetch('https://pink-thankful-oyster.cyclic.app/blogs')
-        .then(response => response.json())
-        .then(blogs => {
-            totalBlogs.innerText=blogs.data.length
-        })
+            .then(response => response.json())
+            .then(blogs => {
+                totalBlogs.innerText = blogs.data.length
+            })
         fetch('https://pink-thankful-oyster.cyclic.app/message')
-        .then(response => response.json())
-        .then(messages => {
-            totalMessages.innerText=messages.data.length
-        })
+            .then(response => response.json())
+            .then(messages => {
+                totalMessages.innerText = messages.data.length
+            })
 
         if (Saveduser.email === 'abijurucyn@gmail.com') { userprofile.innerText = 'superAdmin' }
         else { userprofile.innerText = 'Admin' }
@@ -60,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
     boxUsers.addEventListener('click', () => {
-        SavedUsers = JSON.parse(localStorage.getItem('users')) || [];
+       
         if (main_body.hasChildNodes()) return main_body.innerHTML = "";
         SavedUsers.forEach(element => {
             let content = document.createElement('div');
@@ -84,15 +85,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
     })
 
     messageButton.addEventListener('click', e => {
-       // Savedmessage = JSON.parse(localStorage.getItem('messages')) || [];
-       if (main_body.hasChildNodes()) return main_body.innerHTML = "";
-       fetch('https://pink-thankful-oyster.cyclic.app/message')
-        .then(response => response.json())
-        .then(messages => {
-          console.log(messages)
-           messages.data.forEach(element => {
-            let content = document.createElement('div');
-            content.innerHTML = `
+        // Savedmessage = JSON.parse(localStorage.getItem('messages')) || [];
+        if (main_body.hasChildNodes()) return main_body.innerHTML = "";
+        fetch('https://pink-thankful-oyster.cyclic.app/message')
+            .then(response => response.json())
+            .then(messages => {
+                console.log(messages)
+                messages.data.forEach(element => {
+                    let content = document.createElement('div');
+                    content.innerHTML = `
               <div class="main-content" id="mainMessage">
               <table>
                   <tr>
@@ -105,11 +106,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                   </tr>
               </table>
           </div>`
-            main_body.appendChild(content)
-        });
-        })
-        
-       
+                    main_body.appendChild(content)
+                });
+            })
+
+
     })
 
     //bloglist contents
@@ -146,36 +147,59 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     //button delete
                     var ButtonDelete = document.querySelectorAll('.delete')
                     var cardToDelete = document.querySelectorAll('.card1')
-                    
+
                     for (let i = 0; i < ButtonDelete.length; i++) {
                         ButtonDelete[i].addEventListener('click', function () {
-                            var toDelete =  this.getAttribute("id");
-                            const token =  localStorage.getItem('token');
+                            var toDelete = this.getAttribute("id");
+                            const token = localStorage.getItem('token');
+                            if(!token){
+                            alert("you must login first")
+                            window.location = "/login.html"
+                            }else{
+                                fetch(`https://pink-thankful-oyster.cyclic.app/blogs/${toDelete}`, {
+                                    method: "DELETE",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "Authorization": `Bearer ${token}`
+                                    },
+                                })
+                                    .then(response => response.json())
+                                    .then( blogs => {
+                                         alert(blogs.message)
+                                         if((blogs.message).includes("success")){
+                                            cardToDelete[i].style.display = 'none'
+                                         }
+                                    })
+                                    .catch(error => {
+                                        console.log(error)
+                                    })
+                             
+                            }
                             // localStorage.setItem('ToReadMore',id)
-                            fetch(`https://pink-thankful-oyster.cyclic.app/blogs/${toDelete}`,{
-                                method: "DELETE",
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    "Authorization": `Bearer ${token}`
-                                }, 
-                            })
-                            .then(response => response.json())
-                            .then(blogs => {
-                            alert(blogs.message)
-                        })
-                        .catch(error => {
-                            console.log(error)
-                        })
-                        cardToDelete[i].style.display = 'none'
+                  
+                            
                         }
-                    )
+                        )
 
 
 
-            }})
+                    }
+                    //button update
+                    var ButtonUpdate = document.querySelectorAll('.update');
+                    for (let i = 0; i < ButtonUpdate.length; i++) {
+                        ButtonUpdate[i].addEventListener('click', function () {
+                            var id = this.getAttribute("id");
+                            localStorage.setItem('ToUpdate', id);
+                            window.location = "/BlogEdit.html"
+
+                        }
+                        )
+                    }
+
+                })
 
             })
-            .catch(error => alert(error))
+        // .catch(error => alert(error))
         //         SavedBlog.forEach(element => {
         //             var date = new Date();
         //             var day = date.getDate();

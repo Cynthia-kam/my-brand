@@ -2,28 +2,68 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const titleOfBlog=document.getElementById('blog-title')
     const bodyOfBlog=document.getElementById('blogtext')
     let  imageOfBlog=document.getElementById('image-of-blog')
-    let image=document.getElementById('image')
+    const image=document.getElementById('image')
 
-    const blogs = JSON.parse(localStorage.getItem('blogs'))||[];
     const toupdateID=localStorage.getItem('ToUpdate')
-    let targetBlog= blogs.find(blogs=>blogs.blogId==toupdateID);
-    titleOfBlog.value=targetBlog.title
-    bodyOfBlog.value=targetBlog.body
-    imageOfBlog.src=targetBlog.image
+    fetch(`https://pink-thankful-oyster.cyclic.app/blogs/${toupdateID}`, {
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
 
-    document.querySelector('form').addEventListener('submit',()=>{
+        .then((response) =>
+            response.json()
+            // console.log (response)
 
-        const blogs = JSON.parse(localStorage.getItem('blogs'))||[];
-        const toupdateID=localStorage.getItem('ToUpdate')
-        let targetBlog= blogs.find(blogs=>blogs.blogId==toupdateID);
-        var reader = new FileReader()
-        reader.addEventListener('load', function () {
-        targetBlog.title=titleOfBlog.value
-        targetBlog.body=bodyOfBlog.value
-        targetBlog.image=reader.result;
-        localStorage.setItem('blogs',JSON.stringify(blogs))
+        )
+        .then((blog) => {
+            console.log(blog.data)
+            titleOfBlog.value=blog.data.title
+             bodyOfBlog.value=blog.data.content
+            imageOfBlog.src=blog.data.image
         })
-        reader.readAsDataURL(image.files[0])
+    
+
+    document.querySelector('form').addEventListener('submit',(e)=>{
+        e.preventDefault();
+        const token = localStorage.getItem('token');
+        const data={title:titleOfBlog.value,content:bodyOfBlog.value,image:image.scr}
+        fetch(`https://pink-thankful-oyster.cyclic.app/blogs/${toupdateID}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+            
+        })
+        
+            .then((response) => 
+            response.json()
+                // console.log (response)
+            )
+        .then((blog) => {
+            alert(blog.message);
+            titleOfBlog.value=''
+            bodyOfBlog.value=''
+            imageOfBlog.src=''
+            
+
+        })
+        .catch(error => alert(error))
+        console.log(error)
+
+        // const blogs = JSON.parse(localStorage.getItem('blogs'))||[];
+        // const toupdateID=localStorage.getItem('ToUpdate')
+        // let targetBlog= blogs.find(blogs=>blogs.blogId==toupdateID);
+        // var reader = new FileReader()
+        // reader.addEventListener('load', function () {
+        // targetBlog.title=titleOfBlog.value
+        // targetBlog.body=bodyOfBlog.value
+        // targetBlog.image=reader.result;
+        // localStorage.setItem('blogs',JSON.stringify(blogs))
+        // })
+        // reader.readAsDataURL(image.files[0])
        
         
         
