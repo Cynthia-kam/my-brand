@@ -9,58 +9,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('load', () => {
         div = document.getElementById('blogsCardsDiv')
-        var i =0;
-       // Savedblogs = JSON.parse(localStorage.getItem('blogs')) || [];
-       fetch('https://pink-thankful-oyster.cyclic.app/blogs')
-        .then(response => response.json())
-        .then(blogs => {
-            blogs.data.forEach((element,index) => {
-                let content = document.createElement('div');
+        var i = 0;
+        // Savedblogs = JSON.parse(localStorage.getItem('blogs')) || [];
+        fetch('https://pink-thankful-oyster.cyclic.app/blogs')
+            .then(response => response.json())
+            .then(blogs => {
+                console.log(blogs)
+                blogs.data.forEach((element, index) => {
+                    let content = document.createElement('div');
     
-                content.innerHTML = `
-                     
-                     <img src="${element.image}" alt="blog" style="width:100%">
-                     <p class="title" id="${(element._id)}">${(element.title)}</p>
-                     <a href="#"><i class="fa fa-thumbs-up">likes</i></a>
-                     <a href="#"><i class="fa fa-eye">views</i></a>
-     
-                     <p><button id="${i}" class="readMore">Read more</button></p>`
+                    content.innerHTML = `
+                         <img src="${element.image}" alt="blog" style="width:100%">
+                         <p class="title" id="$">${(element.title)}</p>
+                         <a href="#"><i class="fa fa-thumbs-up">likes</i></a>
+                         <a href="#"><i class="fa fa-eye">views</i></a>
+                         <p><button id="${(element._id)}" class="readMore">Read more</button></p>`
     
-                div.appendChild(content)
-                i++;
-            });
-           
-        })
-        
-        //if (div.hasChildNodes()) return div.innerHTML = "";
-        // Savedblogs.forEach((element,index) => {
-        //     let content = document.createElement('div');
-
-        //     content.innerHTML = `
-                 
-        //          <img src="${element.image}" alt="blog" style="width:100%">
-        //          <p class="title" id="${(element.blogId)}">${(element.title)}</p>
-        //          <a href="#"><i class="fa fa-thumbs-up">likes</i></a>
-        //          <a href="#"><i class="fa fa-eye">views</i></a>
- 
-        //          <p><button id="${i}" class="readMore">Read more</button></p>`
-
-        //     div.appendChild(content)
-        //     i++;
-        // });
-        
-        var ButtonReadMore=document.querySelectorAll('.readMore')
-        var ParagraphTitle=document.querySelectorAll('.title')
-        for(let i=0;i<ButtonReadMore.length;i++){
-            ButtonReadMore[i].addEventListener('click',()=>{
-                var id=ButtonReadMore[i].getAttribute("id")
-                var TocommentId=ParagraphTitle[i].getAttribute("id")
-                console.log(id);
-                localStorage.setItem("ToReadMore",id)
-                localStorage.setItem("ToComment",TocommentId)
-                window.location="/BlogView.html"
+                    div.appendChild(content)
+                    i++;
+    
+                    var ButtonReadMore = document.querySelectorAll(".readMore")
+                    var ParagraphTitle = document.querySelectorAll('.title')
+                    console.log(ButtonReadMore.length)
+                    for (let i = 0; i < ButtonReadMore.length; i++) {
+                        ButtonReadMore[i].addEventListener('click', function () {
+                            var id =  this.getAttribute("id");
+                            localStorage.setItem('ToReadMore',id)
+                            window.location = '/BlogView.html'
+                        });
+                    }
+                });
             })
-        }
+            .catch(error => {
+                console.log(error)
+            })
     })
 
     form.addEventListener('submit', e => {
