@@ -2,13 +2,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     const title = document.getElementById('title');
-
-    const image = document.getElementById('image');
+    const author = document.getElementById('author');
+   // let image = document.getElementById('image');
     const blogText = document.getElementById('blogtext');
-    const cardImage = document.getElementById('card-image');
     successAddedBlog = document.querySelector('#success-signup');
     previewBlog = document.getElementById('previewBlog');
-   
+
 
     form.addEventListener('submit', e => {
         e.preventDefault();
@@ -16,9 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         addBlog();
 
     });
-    previewBlog.addEventListener('click', () => {
-        window.location = '/BlogPreview.html'
-    })
+
     const setError = (element, message) => {
         const inputControl = element.parentElement;
         const errorDisplay = inputControl.querySelector('.error');
@@ -85,45 +82,82 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-   //Saving blog with 'blogs' key
+    //Saving blog with 'blogs' key
+
     const addBlog = () => {
-       // localStorage.removeItem('blogs')
-        var reader = new FileReader()
-        blogs = JSON.parse(localStorage.getItem('blogs'))||[];
-        //generate random number
-        id = Math.floor((Math.random() * 100) + 1);
-        //check if the number is not in ls already
-        let blogId= blogs.find(blogs=>blogs.id==id);
-        while(blogId){
-            id = Math.floor((Math.random() * 100) + 1);
-        }
-        let user = {};
-        reader.addEventListener('load', function () {
+
+        const imageFile = document.getElementById('image').files[0];
+        const reader = new FileReader();
+      
+        reader.addEventListener('load', () => {
+          const image = reader.result;
+          localStorage.setItem('image', image);
+      
+          const blogImage = localStorage.getItem('image');
+          const formData = new FormData();
+          formData.append('image', blogImage);
+          formData.append('title', title.value);
+          formData.append('author', author.value);
+          formData.append('content', blogText.value);
+      
+          console.log(formData); // Check the FormData object in the console
+      
+          fetch('https://pink-thankful-oyster.cyclic.app/blogs', {
+            method: 'POST',
+            body: formData
+          })
+          .then((response) => {
            
-            user.blogId=id
-            user.title = title.value;
-            user.body = blogText.value;
-            user.image = reader.result
-            user.status="pending"
+            return response.json();
+          })
+          .then((data) => {
+             //console.log(data);
+            successAddedBlog.style.display='block'
+            successAddedBlog.innerText=data.message
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+        });
+      
+        reader.readAsDataURL(imageFile);
+      };
+})
 
-           // localStorage.removeItem('blogs')
-            blogs.push(user);
-            stringMessages = JSON.stringify(blogs);
-            localStorage.setItem('blogs', stringMessages);
-            
-            
+          // Usage:
 
-        })
-        reader.readAsDataURL(image.files[0])
-        console.log(id)
-        successAddedBlog.style.display = 'block';
-       
-    }
+           // .catch((error) => console.log(error))
+
+        //    // localStorage.removeItem('blogs')
+        //     var reader = new FileReader()
+        //     blogs = JSON.parse(localStorage.getItem('blogs'))||[];
+        //     //generate random number
+        //     id = Math.floor((Math.random() * 100) + 1);
+        //     //check if the number is not in ls already
+        //     let blogId= blogs.find(blogs=>blogs.id==id);
+        //     while(blogId){
+        //         id = Math.floor((Math.random() * 100) + 1);
+        //     }
+        //     let user = {};
+        //     reader.addEventListener('load', function () {
+
+        //         user.blogId=id
+        //         user.title = title.value;
+        //         user.body = blogText.value;
+        //         user.image = reader.result
+        //         user.status="pending"
+
+        //        // localStorage.removeItem('blogs')
+        //         blogs.push(user);
+        //         stringMessages = JSON.stringify(blogs);
+        //         localStorage.setItem('blogs', stringMessages);
 
 
 
+        //     })
+        //     reader.readAsDataURL(image.files[0])
+        //     console.log(id)
 
 
 
-});
 

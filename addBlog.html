@@ -14,17 +14,20 @@
     <div class="nav">
         <div><a href="/dashboard.html"><i class="fa fa-arrow-left"></i>&nbsp BACK</a></div>
     </div>
-    <h2>+ Add a blog</h2>
    
+   <div class="add-blog-card">
+    <h1 class="add-blog-h1">+ Add a blog</h1>
     <form action="">
-        <div class="success-signup" id="success-signup">successfully saved a new blog<button class="btn-preview" id="previewBlog">PREVIEW</button></div>
+        <div class="success-signup" id="success-signup">successfully saved a new blog</div>
         <div class="container">
             <div class="input-control">
                 <input type="text" id="title" placeholder="Blog title...">
                 <div class="error" id="error"></div>
             </div>
-            
-                <div class="card-image" id="card-image">image</div>
+            <div class="input-control">
+                <input type="text" id="author" placeholder="Blog author">
+                <div class="error" id="error"></div>
+            </div>
                 <div class="input-control">
                     <input type="file" id="image">
                     <div class="error" id="errorimage"></div>
@@ -37,7 +40,7 @@
         
      <button class="btn-preview" type="submit">SAVE</button>
     </form>
-   
+</div>
     <script src="addBlog.js"></script>
 </body>
 </html>

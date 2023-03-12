@@ -104,7 +104,7 @@ commentForm.addEventListener('submit', e => {
             // console.log (response)
         )
         .then((blog) => {
-            const comments = (blog.data.comments)
+            const comments = (blog.data.comments.reverse())
            // if (div.hasChildNodes()) return div.innerHTML = "";
             comments.forEach((element, index) => {
                 let content = document.createElement('div');

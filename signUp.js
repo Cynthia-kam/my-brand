@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             
                 .then((response) => 
-                response.json()
-                    // console.log (response)
+                response.json(),
+                    console.log (response)
                 )
             .then((data) => {
                 console.log('Data:', data);
@@ -128,8 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert(data.errors)
                 }
             })
-            .catch(error => alert(error))
-            console.log(data)
+            .catch(error)
+            console.log(error)
         }
     }
 

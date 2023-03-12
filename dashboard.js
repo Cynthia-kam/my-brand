@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             .then(response => response.json())
             .then(messages => {
                 console.log(messages)
-                messages.data.forEach(element => {
+                messages.data.reverse().forEach(element => {
                     let content = document.createElement('div');
                     content.innerHTML = `
               <div class="main-content" id="mainMessage">

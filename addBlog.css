@@ -14,17 +14,18 @@ body{
     row-gap: 10px;
     height: 100%;
     color: white;
-    padding-top: 100px;
+    padding-top: 2vw;
+    width: 60%;
+   
    
 }
 
 input[type=text]{
-    width: 70%;
+    width: 100%;
     padding: 12px;
     border: 1px solid rgba(37, 225, 237, 1);
     border-radius: 4px;
     box-sizing: border-box;
-    margin: 6px 40px;
     background-color: rgba(0, 0, 0, 0.84);
     resize: vertical;
     color: white;
@@ -52,12 +53,36 @@ float: right;
 }
 #blogtext{
     height: 300px;
-    padding: 0px;
-    width: 90%;
-    margin-left: 40px;
+    padding: 20px;
+    width: 100%;
+    /* margin-left: 40px; */
     background-color: rgba(0, 0, 0, 0.84);
     border: 2px solid rgba(37, 225, 237, 1);
 }
+
+.add-blog-card{
+    background-color: rgba(0, 0, 0, 0.24);
+    width: 60%;
+    margin: 10vh auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    
+    flex-direction: column;
+    justify-content: space-between;
+    display: table;
+    
+}
+.add-blog-h1{
+    text-align: center;
+   
+}
+.add-blog-card form {
+    /* existing styles */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
 h2{
 padding-left: 500px;
 font-family: cursive;
@@ -75,8 +100,7 @@ font-size: 30px;
     cursor: pointer;
     font-size: 18px;
     border-radius: 4px;
-    margin-left: 500px;
-    margin-bottom: 300px;
+    margin: 0 auto;
 }
 .btn-preview a{
     color: black;
@@ -88,8 +112,9 @@ font-size: 30px;
     border-bottom: 5px solid rgba(255, 138, 0, 1);
     height: 60px;
     box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
-    width: 100%;
+    width: 120%;
     background-color: rgba(0, 0, 0, 0.84);;
+   
 }
 h3{
     font-size: 30px;
@@ -109,6 +134,7 @@ textarea{
     font-family: cursive;
     padding:30px;
 }
+
 .input-control.error input{
     border-color: #f16d87;
    
