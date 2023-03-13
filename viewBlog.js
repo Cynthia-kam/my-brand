@@ -38,13 +38,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 `<div class="image"><img src="${blog.data.image}"></div>
         <div class="content">
             <h3>${blog.data.title}</h3>
+            <h4>Author:${blog.data.author}</h4>
+            <h4 class="created-at">created at:${(blog.data.createdAt.split("T")[0])}</h4>
             <p>${blog.data.content}</p>
-            <button class="like" id="like" onclick=""><i class="fa fa-thumbs-up"></i>Like</button>
-            <label id="likesNumber">0</label>
+            
         </div>`)
             const comments = (blog.data.comments)
             // console.log("comments:",comments)
-            console.log(comments[0].name)
+            //console.log(comments[0].name)
 
             div = document.getElementById('footer')
             comments.forEach((element, index) => {
@@ -104,9 +105,9 @@ commentForm.addEventListener('submit', e => {
             // console.log (response)
         )
         .then((blog) => {
-            const comments = (blog.data.comments.reverse())
+            const comments = blog.data.comments.reverse()
            // if (div.hasChildNodes()) return div.innerHTML = "";
-            comments.forEach((element, index) => {
+                comments.forEach((element) => {
                 let content = document.createElement('div');
                 content.classList.add('Commentcard')
                 content.innerHTML = `

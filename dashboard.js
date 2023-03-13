@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     content.innerHTML = `
       <img src="${(blog.image)}" alt="blog" style="width:100%" id="blogImage">
       <p class="title" id="blogTitle">${(blog.title)}</p>
-      <p id="date">Date created:${(blog.createdAt.split("T")[0])}</p>
+      <p id="date">Created:${(blog.createdAt.split("T")[0])}</p>
       <p><button class="update" id="${(blog._id)}">Edit</button></p><p><button class="delete" id="${blog._id}">delete</button></p>`
                     document.getElementById('flex-cards').appendChild(content)
 
@@ -165,10 +165,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 })
                                     .then(response => response.json())
                                     .then( blogs => {
-                                         alert(blogs.message)
                                          if((blogs.message).includes("success")){
-                                            cardToDelete[i].style.display = 'none'
+                                          document.getElementById('success-signup').style.display='block'
+                                          document.getElementById('success-signup').innerText=blogs.message 
+                                          cardToDelete[i].style.display = 'none' 
                                          }
+                                         setTimeout(function(){
+                                            document.getElementById('success-signup').style.display = 'none';
+                                        }, 5000);
                                     })
                                     .catch(error => {
                                         console.log(error)

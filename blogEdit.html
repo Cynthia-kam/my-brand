@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 
 <head>
-    <title>K's new blog</title>
+    <title>K's editblog</title>
     <link rel="icon" type="" href="./logo.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="addBlog.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="nav">
-        <div><a href="/dashboard.html"><i class="fa fa-arrow-left"></i>&nbsp BACK</a></div>
+        <div><a href="/dashboard.html"><i class="fa fa-arrow-left"></i>&nbsp
+                BACK</a></div>
     </div>
-    <h2>+ Edit a blog</h2>
+    <div class="add-blog-card">
+    <h1 class="add-blog-h1">Edit a blog</h1>
     <form>
-<div class="container">
-    <div class="title"><input type="text" id="blog-title" name="firstname" value=""></div>
-    <div class="image"><input type="file" id="image"></div><div class="card-image"><img src="" style="height:
-    100%;width:100%" id="image-of-blog"></div>
-    <div class="body"><textarea id="blogtext" >
-       
-</textarea></div>
-</div>
-<button type="submit" class="btn-preview">UPDATE</button>
-</form> 
+        <div class="success-signup" id="success-signup">successfully saved a new blog</div>
+        <div class="container">
+            <div class="title"><input type="text" id="blog-title"
+                    name="firstname" value=""></div>
+            <div class="title"><input type="text" id="blog-author"
+                    name="firstname" value=""></div>
+            <div class="image"><input type="file" id="image"></div><div
+                class="card-image"><img src="" style="height:
+                    100%;width:100%" id="image-of-blog"></div>
+            <div class="body"><textarea id="blogtext">
+
+                </textarea></div>
+        </div>
+        <button type="submit" class="btn-preview">UPDATE</button>
+    </form>
+    </div>
+    </body>
     <script src="blogEdit.js"></script>
 </body>

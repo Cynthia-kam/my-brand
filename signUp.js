@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     success.innerText=data.message
                     password.value=''
                     password2.value=''
+                    window.location = "/login.html"
                 } else {
                     alert(data.errors)
                 }

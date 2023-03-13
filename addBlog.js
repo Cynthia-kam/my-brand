@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const imageFile = document.getElementById('image').files[0];
         const reader = new FileReader();
-      
         reader.addEventListener('load', () => {
           const image = reader.result;
           localStorage.setItem('image', image);
@@ -114,6 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
              //console.log(data);
             successAddedBlog.style.display='block'
             successAddedBlog.innerText=data.message
+            title.value=''
+            author.value=''
+            blogText.value=''
+            setTimeout(function(){
+                successAddedBlog.style.display = 'none';
+            }, 5000);
           })
           .catch((error) => {
             console.error(error);
