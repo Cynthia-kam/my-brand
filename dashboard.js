@@ -53,8 +53,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 totalMessages.innerText = messages.data.length
             })
 
-        if (Saveduser.email === 'abijurucyn@gmail.com') { userprofile.innerText = 'superAdmin' }
-        else { userprofile.innerText = 'Admin' }
         totalUsers.innerText = JSON.parse(localStorage.users).length;
         console.log(JSON.parse(localStorage.users).length)
         //  bodydiv.style.display='none'

@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
                 .then((response) => 
                 response.json(),
-                    console.log (response)
+                
                 )
             .then((data) => {
                 console.log('Data:', data);
