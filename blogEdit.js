@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             // console.log(formData.get('content'));
              let data = { title: titleOfBlog.value, content: bodyOfBlog.value, author:authorOfBlog.value,image:''}
              console.log(data)
-            fetch(`http://localhost:2000/blogs/${toupdateID}`, {
+            fetch(`https://pink-thankful-oyster.cyclic.app/blogs/${toupdateID}`, {
                 method: "PUT",
                 headers: {
 
