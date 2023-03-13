@@ -173,7 +173,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         }, 5000);
                                     })
                                     .catch(error => {
-                                        console.log(error)
+                                        if((error).includes('401')){
+                                            document.getElementById('success-signup').style.display='block'
+                                          document.getElementById('success-signup').innerText='you are not authorized for this action' 
+                                        }
+                                        setTimeout(function(){
+                                            document.getElementById('success-signup').style.display = 'none';
+                                        }, 2000);
                                     })
                              
                             }
